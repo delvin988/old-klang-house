@@ -1,4 +1,8 @@
-# Restaurant-3 Gericht - Modern React.js Frontend Restaurant Website (Design 3)
+# Restaurant Gericht Landing Page - React.js, TailwindCSS Frontend Project
+
+Restaurant-3 Gericht is a modern, fully responsive restaurant website built using ReactJS. It showcases a premium restaurant experience with a clean design, interactive gallery, menu, chef's word, awards, and contact sections. The project is ideal for learning React component architecture, CSS styling, and building scalable web applications.
+
+- **Live-Demo:** [https://restaurant-3-gericht.netlify.app/](https://restaurant-3-gericht.netlify.app/)
 
 ![Screenshot 2025-07-30 at 15 57 02](https://github.com/user-attachments/assets/d9f0ec6f-ccb7-4505-a470-665ab157b6bb)
 ![Screenshot 2025-07-30 at 15 57 22](https://github.com/user-attachments/assets/fc1e2406-61f2-4716-aadf-2c7ff040fd59)
@@ -9,16 +13,6 @@
 ![Screenshot 2025-07-30 at 15 58 28](https://github.com/user-attachments/assets/44b5986c-0f12-4af8-a181-1cc43b89a157)
 ![Screenshot 2025-07-30 at 15 58 37](https://github.com/user-attachments/assets/b02f5d0e-7ed1-48e0-9398-5b01a03aaa19)
 ![Screenshot 2025-07-30 at 15 58 50](https://github.com/user-attachments/assets/286236b9-5cc7-4a3a-85a1-d885bb2666fb)
-
----
-
-## Project Overview
-
-Restaurant-3 Gericht is a modern, fully responsive restaurant website built using ReactJS. It showcases a premium restaurant experience with a clean design, interactive gallery, menu, chef's word, awards, and contact sections. The project is ideal for learning React component architecture, CSS styling, and building scalable web applications.
-
-- **Live-Demo:** [https://restaurant-3-gericht.netlify.app/](https://restaurant-3-gericht.netlify.app/)
-
----
 
 ## Table of Contents
 

@@ -1,6 +1,6 @@
 # Restaurant Gericht Landing Page - React.js, TailwindCSS Frontend Project
 
-A modern, fully responsive restaurant website built using ReactJS. It showcases a premium restaurant experience with a clean design, interactive gallery, menu, chef's word, awards, and contact sections. The project is ideal for learning React component architecture, CSS styling, and building scalable web applications.
+A modern, fully responsive restaurant website built using React, TailwindCSS. It showcases a premium restaurant experience with a clean design, interactive gallery, menu, chef's word, awards, and contact sections. The project is ideal for learning React component architecture, CSS styling, and building scalable web applications.
 
 - **Live-Demo:** [https://restaurant-3-gericht.netlify.app/](https://restaurant-3-gericht.netlify.app/)
 

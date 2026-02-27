@@ -3,7 +3,13 @@ import PropTypes from "prop-types";
 
 import "./MenuItem.css";
 
-const MenuItem = ({ title, price, tags }) => (
+interface MenuItemProps {
+  title: string;
+  price: string;
+  tags: string;
+}
+
+const MenuItem = ({ title, price, tags }: MenuItemProps) => (
   <div className="app__menuitem">
     <div className="app__menuitem-head">
       <div className="app__menuitem-name">

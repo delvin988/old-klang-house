@@ -1,11 +1,10 @@
 import React from 'react';
-
 import { AboutUs, Chef, FindUs, Footer, Gallery, Header, Intro, Laurels, SpecialMenu } from './container';
 import { Navbar } from './components';
 import './App.css';
 
-const App = () => (
-  <div>
+const App: React.FC = () => (
+  <div style={{ overflowX: 'hidden', maxWidth: '100%' }}>
     <Navbar />
     <Header />
     <AboutUs />

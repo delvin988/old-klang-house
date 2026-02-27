@@ -12,7 +12,40 @@
 .app__video-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.65);
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app__video-overlay_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+    max-width: 720px;
+}
+
+.app__video-overlay_title {
+    font-family: var(--font-base);
+    color: var(--color-golden);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.app__video-overlay_subtitle {
+    font-family: var(--font-alt);
+    color: var(--color-white);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    margin: 0;
 }
 
 .app__video-overlay_circle {
@@ -21,4 +54,11 @@
     border-radius: 50%;
     border: 1px solid var(--color-golden);
     cursor: pointer;
+    margin-top: 0.5rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.app__video-overlay_circle:hover {
+    transform: scale(1.05);
+    border-color: var(--color-crimson);
 }

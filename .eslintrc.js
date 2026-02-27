@@ -1,22 +1,23 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true
+    env: {
+        browser: true,
+        es2021: true,
     },
-    "extends": [
+    extends: [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
+    parserOptions: {
+        ecmaFeatures: { jsx: true },
+        ecmaVersion: 2020,
+        sourceType: "module",
     },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-    }
+    plugins: ["react"],
+    settings: {
+        react: { version: "detect" },
+    },
+    rules: {
+        "react/react-in-jsx-scope": "off",
+    },
+    ignorePatterns: ["build", "node_modules", "*.config.js", "src/**/*.ts", "src/**/*.tsx"],
 };

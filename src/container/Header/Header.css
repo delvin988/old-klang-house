@@ -10,6 +10,7 @@
     text-transform: capitalize;
     line-height: 117px;
     font-size: 90px;
+    min-height: 117px; /* Reserve space to prevent layout shift when fonts load */
 }
 
 .app__header-img img {
@@ -20,12 +21,14 @@
     .app__header-h1 {
         font-size: 180px;
         line-height: 210px;
+        min-height: 210px;
     }
 }
 
 @media screen and (max-width: 1150px) {
     .app__header-h1 {
         font-size: 90px;
+        min-height: 117px;
     }
 }
 
@@ -33,6 +36,7 @@
     .app__header-h1 {
         font-size: 70px;
         line-height: 87px;
+        min-height: 87px;
     }
 }
 
@@ -40,5 +44,6 @@
     .app__header-h1 {
         font-size: 50px;
         line-height: 70px;
+        min-height: 70px;
     }
 }

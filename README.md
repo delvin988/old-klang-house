@@ -6,7 +6,7 @@
 
 A modern, fully responsive restaurant website built using React, TailwindCSS. It showcases a premium restaurant experience with a clean design, interactive gallery, menu, chef's word, awards, and contact sections. The project is ideal for learning React component architecture, CSS styling, and building scalable web applications.
 
-- **Live Demo:** [https://restaurant-3-gericht.netlify.app/](https://restaurant-3-gericht.netlify.app/)
+- **Live Demo:** [https://restaurant-ui-2.vercel.app/](https://restaurant-ui-2.vercel.app/)
 
 ![Screenshot 2025-07-30 at 15 57 02](https://github.com/user-attachments/assets/d9f0ec6f-ccb7-4505-a470-665ab157b6bb)
 ![Screenshot 2025-07-30 at 15 57 22](https://github.com/user-attachments/assets/fc1e2406-61f2-4716-aadf-2c7ff040fd59)

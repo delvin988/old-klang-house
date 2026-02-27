@@ -1,9 +1,10 @@
-import React from 'react';
-import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
+import React from "react";
+import { FiFacebook, FiTwitter, FiInstagram } from "react-icons/fi";
+import { MdCopyright } from "react-icons/md";
 
-import { FooterOverlay, Newsletter } from '../../components';
-import { images } from '../../constants';
-import './Footer.css';
+import { FooterOverlay, Newsletter } from "../../components";
+import { images } from "../../constants";
+import "./Footer.css";
 
 const Footer = () => (
   <div className="app__footer section__padding" id="login">
@@ -20,8 +21,15 @@ const Footer = () => (
 
       <div className="app__footer-links_logo">
         <img src={images.gericht} alt="footer_logo" />
-        <p className="p__opensans">&quot;The best way to find yourself is to lose yourself in the service of others.&quot;</p>
-        <img src={images.spoon} className="spoon__img" style={{ marginTop: 15 }} />
+        <p className="p__opensans">
+          &quot;The best way to find yourself is to lose yourself in the service
+          of others.&quot;
+        </p>
+        <img
+          src={images.spoon}
+          className="spoon__img"
+          style={{ marginTop: 15 }}
+        />
         <div className="app__footer-links_icons">
           <FiFacebook />
           <FiTwitter />
@@ -39,9 +47,10 @@ const Footer = () => (
     </div>
 
     <div className="footer__copyright">
-      <p className="p__opensans">2025 Gericht. All Rights reserved.</p>
+      <p className="p__opensans">
+        {new Date().getFullYear()} Restaurant Gericht. All Rights reserved.
+      </p>
     </div>
-
   </div>
 );
 

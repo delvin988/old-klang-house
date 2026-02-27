@@ -7,7 +7,7 @@
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.34.3-BB4B96)](https://www.framer.com/motion/)
 [![React Icons](https://img.shields.io/badge/React_Icons-4.3.1-F26896)](https://react-icons.github.io/react-icons/)
 
-A modern, fully responsive restaurant website (Gericht) built with **React 18**, **Vite 7**, **TypeScript**, and **Framer Motion**. It showcases a premium dining experience with smooth scroll-triggered animations, an auto-playing photo gallery, video hero section, menu, awards, and contact sections. Ideal for learning React component architecture, TypeScript, Vite, and animation patterns.
+A modern, fully responsive restaurant website built with **React 18**, **Vite 7**, **TypeScript**, and **Framer Motion**. It showcases a premium dining experience with smooth scroll-triggered animations, an auto-playing photo gallery, video hero section, menu, awards, and contact sections. Ideal for learning React component architecture, TypeScript, Vite, and animation patterns.
 
 - **Live Demo:** [https://restaurant-ui-2.vercel.app/](https://restaurant-ui-2.vercel.app/)
 

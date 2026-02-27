@@ -1,8 +1,12 @@
-# Restaurant Gericht Landing Page - React.js, TailwindCSS Frontend Project
+# Gericht | Restaurant Landing Page 2 - React.js, TailwindCSS Frontend Project
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-18.3.1-blue)](https://react.dev/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3.2-green)](https://tailwindcss.com/)
 
 A modern, fully responsive restaurant website built using React, TailwindCSS. It showcases a premium restaurant experience with a clean design, interactive gallery, menu, chef's word, awards, and contact sections. The project is ideal for learning React component architecture, CSS styling, and building scalable web applications.
 
-- **Live-Demo:** [https://restaurant-3-gericht.netlify.app/](https://restaurant-3-gericht.netlify.app/)
+- **Live Demo:** [https://restaurant-3-gericht.netlify.app/](https://restaurant-3-gericht.netlify.app/)
 
 ![Screenshot 2025-07-30 at 15 57 02](https://github.com/user-attachments/assets/d9f0ec6f-ccb7-4505-a470-665ab157b6bb)
 ![Screenshot 2025-07-30 at 15 57 22](https://github.com/user-attachments/assets/fc1e2406-61f2-4716-aadf-2c7ff040fd59)
@@ -60,7 +64,7 @@ A modern, fully responsive restaurant website built using React, TailwindCSS. It
 ## Project Structure
 
 ```bash
-restaurant-3/
+restaurant-2/
 ├── public/
 │   ├── index.html
 │   ├── favicon.ico
@@ -111,8 +115,8 @@ restaurant-3/
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/arnob-mahmud/restaurant-3.git
-   cd restaurant-3
+   git clone https://github.com/arnobt78/Restaurant-Landing-Page-2--React-Frontend
+   cd restaurant-2
    ```
 
 2. **Install dependencies:**
@@ -177,14 +181,16 @@ This project is a great starting point for learning ReactJS, building beautiful 
 
 ---
 
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code as per the terms of the license.
+
 ## Happy Coding! 🎉
 
-Feel free to use this Project Repository and extend this project further!
+This is an **open-source project** - feel free to use, enhance, and extend this project further!
 
-If you have any questions or want to share your work, reach out via GitHub or my portfolio at [https://arnob-mahmud.vercel.app/](https://arnob-mahmud.vercel.app/).
+If you have any questions or want to share your work, reach out via GitHub or my portfolio at [https://www.arnobmahmud.com](https://www.arnobmahmud.com).
 
 **Enjoy building and learning!** 🚀
 
 Thank you! 😊
-
----

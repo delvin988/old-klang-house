@@ -24,7 +24,7 @@ const Chef = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <div ref={ref} className="app__bg app__wrapper section__padding">
+    <div ref={ref} className="app__chef app__bg app__wrapper section__padding">
       <motion.div
         className="app__wrapper_img app__wrapper_img-reverse"
         initial={{ opacity: 0, x: -64 }}

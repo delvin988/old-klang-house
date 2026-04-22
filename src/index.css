@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
-
 html,
 body {
-  background-color: var(--color-black);
+  background-color: var(--color-red);
   width: 100%;
   max-width: 100vw;
 }
 
 /* Don't force scroll container on html — let browser handle vertical scroll naturally to avoid first-swipe "stuck" (scroll chaining). */
 #root {
-  background-color: var(--color-black);
+  background-color: var(--color-red);
   overflow-x: hidden;
   max-width: 100%;
   min-height: 100vh;
@@ -25,6 +24,12 @@ body {
   --color-crimson: #F5EFDB;
   --color-grey: #AAAAAA;
   --color-white: #FFFFFF;
+  --color-red: #A63A1F;
+  --color-orange: #C45A1F;
+  --color-grey1: #E5E5E5;
+  --color-white: #D6CCC2;
+  --color-ivory: #F5EFDB;
+  --color-beige: #DCCA87;
 }
 
 * {

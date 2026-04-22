@@ -47,17 +47,17 @@ const Header = () => (
   >
     <motion.div className="app__wrapper_info" variants={leftColumnVariants}>
       <motion.div variants={itemVariants}>
-        <SubHeading title="Chase the new flavour" />
+        <SubHeading title="Savour The Authentic Taste" />
       </motion.div>
       <motion.h1 className="app__header-h1" variants={itemVariants}>
-        The Key To Fine Dining
+        The Essence Of Bak Kut Teh
       </motion.h1>
       <motion.p
         className="p__opensans"
         style={{ margin: '2rem 0' }}
         variants={itemVariants}
       >
-        Sit tellus lobortis sed senectus vivamus molestie. Condimentum volutpat morbi facilisis quam scelerisque sapien. Et, penatibus aliquam amet tellus
+        A rich and aromatic herbal broth, slow-cooked with tender pork ribs and infused with traditional Malaysian spices. A timeless comfort dish that delivers depth, warmth, and unforgettable flavor in every bite.
       </motion.p>
       <motion.div variants={itemVariants}>
         <button type="button" className="custom__button">Explore Menu</button>
@@ -71,7 +71,7 @@ const Header = () => (
       transition={{ duration: 1.35, ease: easeSmooth, delay: 0.45 }}
     >
       <motion.img
-        src={images.welcome}
+        src={images.food}
         alt="header_img"
         initial={{ opacity: 0, scale: 1.06 }}
         animate={{ opacity: 1, scale: 1 }}

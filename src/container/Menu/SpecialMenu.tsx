@@ -30,10 +30,10 @@ const SpecialMenu = () => {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: easeSmooth, delay: 0.1 }}
         >
-          <p className="app__specialMenu-menu_heading">Wine & Beer</p>
+          <p className="app__specialMenu-menu_heading">Our Signature</p>
           <div className="app__specialMenu_menu_items">
-            {data.wines.map((wine, index) => (
-              <MenuItem key={wine.title + index} title={wine.title} price={wine.price} tags={wine.tags} />
+            {data.bakKutTehMenu.map((menu, index) => (
+              <MenuItem key={menu.title + index} title={menu.title} price={menu.price} tags={menu.tags} />
             ))}
           </div>
         </motion.div>
@@ -54,10 +54,10 @@ const SpecialMenu = () => {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: easeSmooth, delay: 0.1 }}
         >
-          <p className="app__specialMenu-menu_heading">Cocktails</p>
+          <p className="app__specialMenu-menu_heading">Beverages</p>
           <div className="app__specialMenu_menu_items">
-            {data.cocktails.map((cocktail, index) => (
-              <MenuItem key={cocktail.title + index} title={cocktail.title} price={cocktail.price} tags={cocktail.tags} />
+            {data.beverages.map((beverages, index) => (
+              <MenuItem key={beverages.title + index} title={beverages.title} price={beverages.price} tags={beverages.tags} />
             ))}
           </div>
         </motion.div>
@@ -69,7 +69,7 @@ const SpecialMenu = () => {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: easeSmooth, delay: 0.4 }}
       >
-        <button type="button" className="custom__button">View More</button>
+        {/* <button type="button" className="custom__button">View More</button> */}
       </motion.div>
     </div>
   );

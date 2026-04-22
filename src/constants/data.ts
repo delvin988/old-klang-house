@@ -1,58 +1,43 @@
 import images from './images';
 
-const wines = [
+const bakKutTehMenu = [
   {
-    title: 'Chapel Hill Shiraz',
-    price: '$56',
-    tags: 'AU | Bottle',
+    title: 'Classic Bak Kut Teh',
+    price: 'Rp 75.000',
+    tags: 'Pork Ribs | Herbal Broth',
   },
   {
-    title: 'Catena Malbee',
-    price: '$59',
-    tags: 'AU | Bottle',
+    title: 'Premium Spare Rib Bak Kut Teh',
+    price: 'Rp 95.000',
+    tags: 'Meaty Ribs | Rich Soup',
   },
   {
-    title: 'La Vieillw Rose',
-    price: '$44',
-    tags: 'FR | 750 ml',
-  },
-  {
-    title: 'Rhino Pale Ale',
-    price: '$31',
-    tags: 'CA | 750 ml',
-  },
-  {
-    title: 'Irish Guinness',
-    price: '$26',
-    tags: 'IE | 750 ml',
+    title: 'Dry Bak Kut Teh',
+    price: 'Rp 85.000',
+    tags: 'Claypot Style | Spicy Sauce',
   },
 ];
 
-const cocktails = [
+const beverages = [
   {
-    title: 'Aperol Sprtiz',
-    price: '$20',
-    tags: 'Aperol | Villa Marchesi prosecco | soda | 30 ml',
+    title: 'Chinese Tea',
+    price: 'Rp 15.000',
+    tags: 'Oolong | Jasmine | Free refill',
   },
   {
-    title: "Dark 'N' Stormy",
-    price: '$16',
-    tags: 'Dark rum | Ginger beer | Slice of lime',
+    title: 'Iced Lemon Tea',
+    price: 'Rp 18.000',
+    tags: 'Black tea | Lemon | Refreshing',
   },
   {
-    title: 'Daiquiri',
-    price: '$10',
-    tags: 'Rum | Citrus juice | Sugar',
+    title: 'Barley Drink',
+    price: 'Rp 20.000',
+    tags: 'Roasted barley | Light | Traditional',
   },
   {
-    title: 'Old Fashioned',
-    price: '$31',
-    tags: 'Bourbon | Brown sugar | Angostura Bitters',
-  },
-  {
-    title: 'Negroni',
-    price: '$26',
-    tags: 'Gin | Sweet Vermouth | Campari | Orange garnish',
+    title: 'Chrysanthemum Tea',
+    price: 'Rp 22.000',
+    tags: 'Floral | Herbal | Cooling drink',
   },
 ];
 
@@ -79,4 +64,4 @@ const awards = [
   },
 ];
 
-export default { wines, cocktails, awards };
+export default { bakKutTehMenu, beverages, awards };

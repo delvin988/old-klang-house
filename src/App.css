@@ -9,7 +9,7 @@
 }
 
 .app__bg {
-  background: url('./assets/bg.png');
+  background: var(--color-red);
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
@@ -89,11 +89,14 @@
 }
 
 .headtext__cormorant {
+   text-shadow: 0 0 1px currentColor;
+  -webkit-text-stroke: 0.5px currentColor;
   font-family: var(--font-base);
-  color: var(--color-golden);
-  font-size: 64px;
+  color: var(--color-white);
+  font-size: 90px;
   line-height: 83.2px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
+  font-weight: 700;
   text-transform: capitalize;
 }
 
@@ -174,4 +177,27 @@
     font-size: 45px;
     line-height: 70px;
   }
+}
+
+.app__findus {
+  position: relative;
+}
+
+.app__findus::before,
+.app__findus::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 5px;
+  background: linear-gradient(to right, transparent, #dcca87, transparent);
+  z-index: 3; /* penting */
+}
+
+.app__findus::before {
+  top: 0;
+}
+
+.app__findus::after {
+  bottom: 0;
 }

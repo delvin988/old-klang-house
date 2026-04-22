@@ -1,3 +1,7 @@
+.app__chef {
+  position: relative;
+}
+
 .app__chef-content {
     display: flex;
     flex-direction: column;
@@ -48,4 +52,24 @@
     .app__chef-sign img {
         width: 80%;
     }
+}
+
+/* garis atas & bawah */
+.app__chef::before,
+.app__chef::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 5px;
+  background: linear-gradient(to right, transparent, #dcca87, transparent);
+  z-index: 3;
+}
+
+.app__chef::before {
+  top: 0;
+}
+
+.app__chef::after {
+  bottom: 0;
 }

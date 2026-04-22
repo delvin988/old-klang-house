@@ -38,7 +38,7 @@ const Laurels = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <div ref={ref} className="app__bg app__wrapper section__padding" id="awards">
+    <div ref={ref} className="app__laurels app__bg app__wrapper section__padding" id="awards">
       <motion.div
         className="app__wrapper_info"
         initial={{ opacity: 0, x: -48 }}

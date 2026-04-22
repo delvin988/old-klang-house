@@ -1,7 +1,7 @@
 .app__newsletter {
     padding: 2rem 4rem;
     border: 1px solid var(--color-golden);
-    background: var(--color-black);
+    background: var(--color-red);
 }
 
 .app__newsletter-heading {
@@ -23,7 +23,7 @@
     
     margin-right: 2rem;
     padding: 0.75rem 1rem;
-    background: var(--color-black);
+    background: var(--color-red);
 }
 
 .app__newsletter-input button {
@@ -60,4 +60,17 @@
         font-size: 32px;
         line-height: 50px;
     }
+}
+
+.app__newsletter-input input::placeholder {
+    color: var(--color-white);
+    opacity: 1;
+}
+
+.app__newsletter-input input::-webkit-input-placeholder {
+    color: var(--color-white);
+}
+
+.app__newsletter-input input:-ms-input-placeholder {
+    color: var(--color-white);
 }

@@ -25,9 +25,9 @@ const Footer = () => {
           transition={{ duration: 1, ease: easeSmooth, delay: 0.1 }}
         >
           <h1 className="app__footer-headtext">Contact Us</h1>
-          <p className="p__opensans">9 W 53rd St, New York, NY 10019, USA</p>
-          <p className="p__opensans">+1 212-344-1230</p>
-          <p className="p__opensans">+1 212-555-1230</p>
+          <p className="p__opensans">9 W 53rd St, Jakarta, JKT 10019, IDN</p>
+          <p className="p__opensans">+62 81-23-456</p>
+          <p className="p__opensans">+61 22-555-1230</p>
         </motion.div>
 
         <motion.div
@@ -36,7 +36,7 @@ const Footer = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, ease: easeSmooth, delay: 0.25 }}
         >
-          <img src={images.gericht} alt="footer_logo" />
+          <img src={images.okhWord} alt="footer_logo" />
           <p className="p__opensans">
             &quot;The best way to find yourself is to lose yourself in the service
             of others.&quot;
@@ -75,7 +75,7 @@ const Footer = () => {
         transition={{ duration: 0.8, ease: easeSmooth, delay: 0.5 }}
       >
         <p className="p__opensans">
-          {new Date().getFullYear()} Restaurant Gericht. All Rights reserved.
+          {new Date().getFullYear()} Restaurant Old Klang House. All Rights reserved.
         </p>
       </motion.div>
     </div>

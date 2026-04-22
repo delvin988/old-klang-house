@@ -1,3 +1,7 @@
+.app__laurels {
+  position: relative;
+}
+
 .app__laurels_awards {
     display: flex;
     justify-content: flex-start;
@@ -39,4 +43,24 @@
         min-width: 100%;
         margin: 1rem 0;
     }
+}
+
+/* garis atas & bawah */
+.app__laurels::before,
+.app__laurels::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 5px;
+  background: linear-gradient(to right, transparent, #dcca87, transparent);
+  z-index: 3;
+}
+
+.app__laurels::before {
+  top: 0;
+}
+
+.app__laurels::after {
+  bottom: 0;
 }

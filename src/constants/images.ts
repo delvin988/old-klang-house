@@ -20,6 +20,9 @@ import award05 from '../assets/award05.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
 import gericht from '../assets/gericht.png';
+import okh from '../assets/okh.png'
+import okhWord from '../assets/okhWord.png'
+import food from '../assets/food.png'
 
 export default {
   bg,
@@ -44,4 +47,7 @@ export default {
   sign,
   quote,
   gericht,
+  okh,
+  okhWord,
+  food,
 };

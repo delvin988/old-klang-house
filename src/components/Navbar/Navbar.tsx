@@ -29,7 +29,8 @@ const Navbar = () => {
       transition={{ duration: 1.2, ease: navEase }}
     >
       <div className="app__navbar-logo">
-        <img src={images.gericht} alt="app__logo" />
+        <img src={images.okh} alt="app__logo" />
+        <img src={images.okhWord} alt="app__logo2" />
       </div>
       <ul className="app__navbar-links">
         <li className="p__opensans"><a href="#home" onClick={handleNavClick}>Home</a></li>
@@ -39,7 +40,7 @@ const Navbar = () => {
         <li className="p__opensans"><a href="#contact" onClick={handleNavClick}>Contact</a></li>
       </ul>
       <div className="app__navbar-login">
-        <a href="#login" className="p__opensans" onClick={handleNavClick}>Log In / Registration</a>
+        <a href="#login" className="p__opensans" onClick={handleNavClick}>Subscribe</a>
         <div />
         <a href="/" className="p__opensans">Book Table</a>
       </div>

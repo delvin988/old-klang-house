@@ -32,8 +32,8 @@ const Navbar = () => {
         transition={{ duration: 1.2, ease: navEase }}
       >
         <div className="app__navbar-logo">
-          <img src={images.okh} alt="app__logo" />
-          <img src={images.okhWord} alt="app__logo2" />
+          <img src={images.okh} alt="app__logo" className="logo__icon" />
+          <img src={images.okhWord} alt="app__logo2" className="logo__text" />
         </div>
         <ul className="app__navbar-links">
           <li className="p__opensans">

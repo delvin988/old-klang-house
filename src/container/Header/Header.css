@@ -1,10 +1,13 @@
 .app__header {
-    background-color: var(--color-red);
+    background: url('../../assets/bgsec1final.png');
+    background-size: cover;
+    background-position: top center;
+    background-color: #f3e9dc;
 }
 
 .app__header-h1 {
     font-family: var(--font-base);
-    color: var(--color-crimson);
+    color: var(--color-brown);
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: capitalize;
@@ -46,4 +49,11 @@
         line-height: 70px;
         min-height: 70px;
     }
+}
+.app__header-wrapper {
+    position: relative;
+    background: url('../../assets/bgsec1final.png');
+    background-size: cover;
+    background-position: center;
+    padding-top: 40px;
 }

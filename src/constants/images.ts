@@ -23,6 +23,7 @@ import gericht from '../assets/gericht.png';
 import okh from '../assets/okh.png'
 import okhWord from '../assets/okhWord.png'
 import food from '../assets/food.png'
+import hanzi from '../assets/hanzi.png'
 
 export default {
   bg,
@@ -50,4 +51,5 @@ export default {
   okh,
   okhWord,
   food,
+  hanzi,
 };

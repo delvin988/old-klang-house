@@ -32,7 +32,7 @@ const FindUs = () => {
           </p>{" "}
           <p
             className="p__cormorant"
-            style={{ color: "#DCCA87", margin: "2rem 0" }}
+            style={{ color: "#A63A1F", margin: "2rem 0" }}
           >
             Opening Hours
           </p>

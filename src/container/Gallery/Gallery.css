@@ -1,7 +1,7 @@
 .app__gallery {
     flex-direction: row;
 
-    background: var(--color-red);
+    background: url('../../assets/bgsec3final.png');
     padding: 4rem 0 4rem 6rem;
 }
 

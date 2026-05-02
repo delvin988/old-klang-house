@@ -5,14 +5,14 @@ import './App.css';
 
 const App: React.FC = () => (
   <div style={{ overflowX: 'hidden', maxWidth: '100%' }}>
-    <Navbar />
+    {/* <Navbar /> */}
     <Header />
     <AboutUs />
     <SpecialMenu />
-    <Chef />
-    <Intro />
-    <Laurels />
-    <Gallery />
+    {/* <Chef /> */}
+    {/* <Intro /> */}
+    {/* <Laurels /> */}
+    {/* <Gallery /> */}
     <FindUs />
     <Footer />
   </div>

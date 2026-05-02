@@ -1,6 +1,8 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
-import { FiFacebook, FiTwitter, FiInstagram } from "react-icons/fi";
+import { FiFacebook, FiTwitter, FiInstagram, FiX } from "react-icons/fi";
+import { FaTwitter } from "react-icons/fa";
+
 
 import { FooterOverlay, Newsletter } from "../../components";
 import { images } from "../../constants";
@@ -13,9 +15,9 @@ const Footer = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <div ref={ref} className="app__footer section__padding" id="login">
-      <FooterOverlay />
-      <Newsletter />
+    <div ref={ref} className="app__footer app__bg section__padding" id="login">
+      {/* <FooterOverlay /> */}
+      {/* <Newsletter /> */}
 
       <div className="app__footer-links">
         <motion.div

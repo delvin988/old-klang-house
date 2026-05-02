@@ -12,14 +12,14 @@ const SpecialMenu = () => {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <div ref={ref} className="app__specialMenu flex__center section__padding" id="menu">
+    <div ref={ref} className="app__specialMenu app__bg flex__center section__padding" id="menu">
       <motion.div
         className="app__specialMenu-title"
         initial={{ opacity: 0, y: -32 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.9, ease: easeSmooth }}
       >
-        <SubHeading title="Menu that fits your palatte" />
+        <SubHeading style={{ color: "#6B5E4B" }} title="Menu that fits your palatte" />
         <h1 className="headtext__cormorant">Today&apos;s Special</h1>
       </motion.div>
 

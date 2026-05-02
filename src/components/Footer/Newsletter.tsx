@@ -13,7 +13,7 @@ const Newsletter = () => {
   return (
     <motion.div
       ref={ref}
-      className="app__newsletter"
+      className="app__newsletter app__bg"
       initial={{ opacity: 0, y: 48 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1, ease: easeSmooth }}

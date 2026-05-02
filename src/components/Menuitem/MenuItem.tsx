@@ -13,18 +13,18 @@ const MenuItem = ({ title, price, tags }: MenuItemProps) => (
   <div className="app__menuitem">
     <div className="app__menuitem-head">
       <div className="app__menuitem-name">
-        <p className="p__cormorant" style={{ color: "#DCCA87" }}>
+        <p className="p__cormorant" style={{ color: "#A63A1F" }}>
           {title}
         </p>
       </div>
       <div className="app__menuitem-dash" />
       <div className="app__menuitem-price">
-        <p className="p__cormorant">{price}</p>
+        <p className="p__cormorant" style={{ color: "#3E2F1C" }}>{price}</p>
       </div>
     </div>
 
     <div className="app__menuitem-sub">
-      <p className="p__opensans" style={{ color: "#AAAAAA" }}>
+      <p className="p__opensans" style={{ color: "#6B5E4B" }}>
         {tags}
       </p>
     </div>

@@ -1,7 +1,9 @@
 .app__aboutus {
+  background: url('../../assets/bgsec2final.png');
   position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
+  background-size: 100% auto;
 }
 
 .app__aboutus-overlay {
@@ -51,10 +53,20 @@
 .app__aboutus-content_about p,
 .app__aboutus-content_history p {
   margin: 2rem 0;
-  color: var(--color-grey);
+  color: var(--color-redopensans);
 }
 
 @media screen and (min-width: 2000px) {
+  .app__aboutus-overlay img {
+    display: none !important;
+  }
+  .app__aboutus {
+  background: url('../../assets/bgsec2.png');
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-size: cover;
+}
   .app__aboutus-content_knife img {
     height: 1110px;
   }
@@ -66,6 +78,16 @@
 }
 
 @media screen and (max-width: 900px) {
+    .app__aboutus-overlay img {
+    display: none !important;
+  }
+  .app__aboutus {
+  background: url('../../assets/bgsec2.png');
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-size: cover
+  }
   .app__aboutus-content {
     flex-direction: column;
   }
@@ -76,6 +98,16 @@
 }
 
 @media screen and (max-width: 650px) {
+   .app__aboutus-overlay img {
+    display: none !important;
+  }
+  .app__aboutus {
+  background: url('../../assets/bgsec2.png');
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-size: cover
+  }
   .app__aboutus-overlay img {
     width: 80%;
     height: 320px;

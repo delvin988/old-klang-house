@@ -1,6 +1,6 @@
 .app__specialMenu {
     flex-direction: column;
-    background: var(--color-red);
+    background: url('../../assets/bgsec2final.png');
 }
 
 .app__specialMenu-title {
@@ -24,7 +24,7 @@
     font-size: 45px;
     line-height: 58.5px;
     letter-spacing: 0.04em;
-    color: var(--color-white);
+    color: var(--color-brown);
 }
 
 .app__specialMenu-menu_wine,

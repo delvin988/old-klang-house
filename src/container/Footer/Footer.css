@@ -45,7 +45,7 @@
 }
 
 .app__footer-links_icons svg {
-    color: var(--color-white);
+    color: var(--color-brown);
     margin: 0.5rem;
     font-size: 24px;
     cursor: pointer;
@@ -57,8 +57,8 @@
 
 .app__footer-headtext {
     font-family: var(--font-base);
-    color: var(--color-white);
-    font-weight: 400;
+    color: var(--color-brown);
+    font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: capitalize;
     font-size: 32px;

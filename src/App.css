@@ -9,7 +9,7 @@
 }
 
 .app__bg {
-  background: var(--color-red);
+  background: url('assets/bgsec2.png');
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
@@ -53,23 +53,29 @@
 }
 
 .custom__button {
-  background-color: var(--color-crimson);
-    color: var(--color-black);
-    font-family: var(--font-base);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 28px;
-    font-size: 16px;
-    padding: 0.5rem 1.5rem;
-    border-radius: 1px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  background-color: #F3E6C9;   /* soft gold */
+  color: #8B3A2E;              /* merah elegan (sama kayak "Find Us") */
+  font-family: var(--font-base);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  padding: 0.6rem 1.8rem;
+
+  border: 1px solid #D4B06A;
+  border-radius: 4px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.custom__button:hover {
+  background-color: #D4B06A;
+  color: #ffffff;
 }
 
 .p__cormorant {
   font-family: var(--font-base);
-  color: var(--color-white);
+  color: var(--color-redmenu);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: capitalize;
@@ -80,7 +86,7 @@
 
 .p__opensans {
   font-family: var(--font-alt);
-  color: var(--color-white);
+  color: var(--color-redopensans);
   font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: capitalize;
@@ -92,7 +98,7 @@
    text-shadow: 0 0 1px currentColor;
   -webkit-text-stroke: 0.5px currentColor;
   font-family: var(--font-base);
-  color: var(--color-white);
+  color: var(--color-brown);
   font-size: 90px;
   line-height: 83.2px;
   letter-spacing: 0;

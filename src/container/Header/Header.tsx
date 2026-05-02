@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { SubHeading } from '../../components';
+import { SubHeading, Navbar } from '../../components';
 import { images } from '../../constants';
 import './Header.css';
 
@@ -38,8 +38,10 @@ const itemVariants = {
 };
 
 const Header = () => (
+  <div className="app__header-wrapper">
+    <Navbar /> {/* pindahin ke sini */}
   <motion.div
-    className="app__header app__wrapper section__padding"
+    className="app__header app__bg app__wrapper section__padding"
     id="home"
     initial="hidden"
     animate="visible"
@@ -79,6 +81,7 @@ const Header = () => (
       />
     </motion.div>
   </motion.div>
+  </div>
 );
 
 export default Header;

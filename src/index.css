@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 html,
 body {
-  background-color: var(--color-red);
+  background: url('assets/bgsec2.png');;
   width: 100%;
   max-width: 100vw;
 }
 
 /* Don't force scroll container on html — let browser handle vertical scroll naturally to avoid first-swipe "stuck" (scroll chaining). */
 #root {
-  background-color: var(--color-red);
+  background: url('assets/bgsec2.png');
   overflow-x: hidden;
   max-width: 100%;
   min-height: 100vh;
@@ -30,6 +30,12 @@ body {
   --color-white: #D6CCC2;
   --color-ivory: #F5EFDB;
   --color-beige: #DCCA87;
+  --color-brown: #8B3A2E;
+  --color-redbrown: #A63A1F;
+  --color-redmenu: #6B5E4B;
+  --color-redprice: #3E2F1C;
+  --color-goldendash: #D4B06A;
+  --color-redopensans: #5A4632;
 }
 
 * {

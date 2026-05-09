@@ -28,3 +28,4 @@ yarn-error.log*
 .github
 
 node_modules
+.vercel

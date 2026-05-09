@@ -1,21 +1,50 @@
-import React from 'react';
-import { AboutUs, Chef, FindUs, Footer, Gallery, Header, Intro, Laurels, SpecialMenu } from './container';
-import { Navbar } from './components';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-const App: React.FC = () => (
-  <div style={{ overflowX: 'hidden', maxWidth: '100%' }}>
-    {/* <Navbar /> */}
+import { AboutUs, Chef, FindUs, Footer, Gallery, Header, Intro, Laurels, SpecialMenu } from './container';
+import WhatsAppButton from "./container/Footer/WhatsAppButton";
+
+import RestaurantBackofficeDashboard
+  from "./container/Backoffice/RestaurantBackofficeDashboard";
+
+import "./App.css";
+
+const Home = () => (
+  <div
+    style={{
+      overflowX: "hidden",
+      maxWidth: "100%",
+    }}
+  >
     <Header />
     <AboutUs />
     <SpecialMenu />
-    {/* <Chef /> */}
-    {/* <Intro /> */}
-    {/* <Laurels /> */}
-    {/* <Gallery /> */}
     <FindUs />
     <Footer />
+    {/* <WhatsAppButton/> */}
   </div>
+);
+
+const App: React.FC = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route
+        path="/"
+        element={<Home />}
+      />
+
+      <Route
+        path="/backoffice"
+        element={
+          <RestaurantBackofficeDashboard />
+        }
+      />
+    </Routes>
+  </BrowserRouter>
 );
 
 export default App;

@@ -1,0 +1,228 @@
+.backoffice {
+  min-height: 100vh;
+
+  background: #F7F3EC;
+
+  padding: 40px 20px;
+}
+
+.backoffice__container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.backoffice__header {
+  margin-bottom: 32px;
+}
+
+.backoffice__header h1 {
+  color: #8B3A2E;
+
+  margin-bottom: 8px;
+
+  font-size: 32px;
+}
+
+.backoffice__header p {
+  color: #7A6A58;
+}
+
+.backoffice__tableWrapper {
+  background: white;
+
+  border-radius: 20px;
+
+  overflow-x: auto;
+
+  border: 1px solid #E5D7C3;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.backoffice__table {
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: collapse;
+}
+
+.backoffice__table thead {
+  background: #FBF8F2;
+}
+
+.backoffice__table th {
+  text-align: left;
+
+  padding: 18px;
+
+  color: #7A6A58;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+.backoffice__table td {
+  padding: 20px 18px;
+
+  color: #5A4632;
+
+  vertical-align: top;
+
+  border-top: 1px solid #EFE7DB;
+}
+
+.backoffice__bookingId {
+  margin-top: 6px;
+
+  font-size: 13px;
+
+  color: #8D7B68;
+}
+
+.backoffice__status {
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  white-space: nowrap;
+}
+
+.backoffice__status.pending {
+  background: #FEF3C7;
+
+  color: #92400E;
+}
+
+.backoffice__status.confirmed {
+  background: #DBEAFE;
+
+  color: #1D4ED8;
+}
+
+.backoffice__status.done {
+  background: #DCFCE7;
+
+  color: #166534;
+}
+
+.backoffice__status.cancelled {
+  background: #FEE2E2;
+
+  color: #B91C1C;
+}
+
+.backoffice__actions {
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+}
+
+.backoffice__actions button {
+  border: none;
+
+  background: #8B3A2E;
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  transition: 0.2s ease;
+}
+
+.backoffice__actions button:hover {
+  opacity: 0.9;
+}
+
+.backoffice__actions button.cancel {
+  background: #DC2626;
+}
+
+.backoffice__menuList {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  min-width: 220px;
+}
+
+.backoffice__menuItem {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: #FBF8F2;
+
+  border: 1px solid #EFE7DB;
+
+  border-radius: 10px;
+
+  padding: 8px 12px;
+
+  gap: 12px;
+}
+
+.backoffice__menuItem .menuName {
+  color: #5A4632;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+}
+
+.backoffice__menuItem .menuQty {
+  background: #8B3A2E;
+
+  color: white;
+
+  border-radius: 999px;
+
+  padding: 4px 8px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .backoffice {
+    padding: 24px 12px;
+  }
+
+  .backoffice__header h1 {
+    font-size: 26px;
+  }
+
+  .backoffice__table th,
+  .backoffice__table td {
+    padding: 14px;
+  }
+}

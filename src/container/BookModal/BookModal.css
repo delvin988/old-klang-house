@@ -15,6 +15,22 @@
   animation: overlayFade 0.3s ease-out forwards;
 }
 
+.modal__container input:focus,
+.modal__container textarea:focus,
+.modal__container select:focus {
+  border-color: #8B3A2E;
+}
+
+.modal__container select {
+  cursor: pointer;
+
+  /* arrow custom */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7L10 12L15 7' stroke='%235A4632' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+}
+
 .modal__container {
   width: 420px;
   background: #F7F3EC;
@@ -50,7 +66,8 @@
 }
 
 .modal__container input,
-.modal__container textarea {
+.modal__container textarea,
+.modal__container select {
   width: 100%;
   margin-bottom: 1rem;
   padding: 10px;
@@ -104,4 +121,127 @@
     opacity: 1;
     transform: translateY(0px) scale(1);
   }
+}
+.menuEditButton {
+  width: 100%;
+
+  margin-bottom: 1rem;
+
+  padding: 10px 14px;
+
+  border: 1px solid #D6C5A4;
+
+  background: #FBF8F2;
+
+  border-radius: 8px;
+
+  color: #8B3A2E;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.menuEditButton:hover {
+  background: #F3ECE2;
+}
+
+.successModal__overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 2000;
+
+  backdrop-filter: blur(4px);
+}
+
+.successModal {
+  width: 90%;
+
+  max-width: 400px;
+
+  background: #F7F3EC;
+
+  border-radius: 20px;
+
+  padding: 32px 24px;
+
+  text-align: center;
+
+  border: 1px solid #E5D7C3;
+
+  animation: modalPopSmooth 0.3s ease;
+}
+
+.successModal__icon {
+  width: 72px;
+
+  height: 72px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 999px;
+
+  background: #8B3A2E;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 34px;
+
+  font-weight: bold;
+}
+
+.successModal h2 {
+  color: #8B3A2E;
+
+  margin-bottom: 12px;
+}
+
+.successModal p {
+  color: #6B5E4B;
+
+  line-height: 1.6;
+
+  margin-bottom: 24px;
+}
+
+.successModal button {
+  width: 100%;
+
+  border: none;
+
+  background: #8B3A2E;
+
+  color: white;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.successModal button:hover {
+  background: #6f2e24;
 }

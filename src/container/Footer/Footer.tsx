@@ -28,8 +28,7 @@ const Footer = () => {
         >
           <h1 className="app__footer-headtext">Contact Us</h1>
           <p className="p__opensans">9 W 53rd St, Jakarta, JKT 10019, IDN</p>
-          <p className="p__opensans">+62 81-23-456</p>
-          <p className="p__opensans">+61 22-555-1230</p>
+          <p className="p__opensans">+62 821-1682-4234</p>
         </motion.div>
 
         <motion.div

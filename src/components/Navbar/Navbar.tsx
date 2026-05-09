@@ -5,12 +5,18 @@ import { MdOutlineRestaurantMenu } from "react-icons/md";
 import images from "../../constants/images";
 import BookingModal from "../../container/BookModal/BookModal";
 import "./Navbar.css";
+import PhoneModal from "../../container/PhoneModal/PhoneModal";
+import OtpModal from "../../container/OtpModal/OtpModal";
 
 const navEase = [0.25, 0.46, 0.45, 0.94] as const;
 
 const Navbar = () => {
+  const [step, setStep] = React.useState<"phone" | "otp" | "booking" | null>(
+    null,
+  );
+  const [phone, setPhone] = React.useState("");
+  const [verifiedPhone, setVerifiedPhone] = React.useState("");
   const [toggleMenu, setToggleMenu] = React.useState(false);
-  const [open, setOpen] = React.useState<boolean>(false);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const href = (e.currentTarget.getAttribute("href") || "").trim();
@@ -59,13 +65,18 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="app__navbar-login">
-          <a href="#login" className="p__opensans" onClick={handleNavClick}>
-            Subscribe
+          <a
+            href="https://wa.me/6282116824234"
+            className="p__opensans"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Message Us
           </a>
           <div />
           <button
             className="p__opensans"
-            onClick={() => setOpen(true)}
+            onClick={() => setStep("phone")}
             style={{
               background: "transparent",
               border: "none",
@@ -113,10 +124,19 @@ const Navbar = () => {
                 </li>
                 <li>
                   <a
+                    href="https://wa.me/6282116824234"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Message Us
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="#"
                     onClick={(e) => {
                       e.preventDefault();
-                      setOpen(true);
+                      setStep("phone");
                       setToggleMenu(false);
                     }}
                   >
@@ -129,7 +149,31 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      <BookingModal open={open} setOpen={setOpen} />
+      {step === "phone" && (
+        <PhoneModal
+          phone={phone}
+          setPhone={setPhone}
+          setVerifiedPhone={setVerifiedPhone}
+          onSuccess={() => setStep("otp")}
+          onClose={() => setStep(null)}
+        />
+      )}
+
+      {step === "otp" && (
+        <OtpModal
+          phone={verifiedPhone}
+          onSuccess={() => setStep("booking")}
+          onClose={() => setStep(null)}
+        />
+      )}
+
+      {step === "booking" && (
+        <BookingModal
+          open={true}
+          setOpen={() => setStep(null)}
+          phone={verifiedPhone}
+        />
+      )}
     </>
   );
 };

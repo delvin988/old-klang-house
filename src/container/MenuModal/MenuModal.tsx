@@ -147,7 +147,14 @@ const MenuModal: React.FC<Props> = ({
 
   return (
     <>
-      <div className="modal__overlay" onClick={handleClose}>
+      <div
+        className="modal__overlay"
+        onClick={() => {
+          if (!showCancelConfirm) {
+            handleClose();
+          }
+        }}
+      >
         <div
           className="menuModal__container"
           onClick={(e) => e.stopPropagation()}

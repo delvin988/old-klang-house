@@ -358,3 +358,12 @@
 .confirmModal__primary:hover {
   background: #6f2e24;
 }
+
+.confirmOverlay {
+    z-index: 9999;
+}
+
+.confirmModal {
+    z-index: 10000;
+    position: relative;
+}

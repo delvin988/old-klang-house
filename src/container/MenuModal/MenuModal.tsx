@@ -142,6 +142,8 @@ const MenuModal: React.FC<Props> = ({
       return;
     }
 
+    setWantMenu("no");
+    setSelectedMenus([]);
     setOpen(false);
   };
 

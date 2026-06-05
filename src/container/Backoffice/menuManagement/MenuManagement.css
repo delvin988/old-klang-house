@@ -204,7 +204,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
   .menuManagement__modalCard {
     padding: 20px;

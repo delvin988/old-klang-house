@@ -18,7 +18,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
   const [showMenuModal, setShowMenuModal] = React.useState(false);
   const [showSuccess, setShowSuccess] = React.useState(false);
   const [wantMenu, setWantMenu] = React.useState("");
-  const today = new Date().toLocaleDateString("en-CA");
+  const today = new Date().toISOString().split("T")[0];
   const maxDate = new Date();
   maxDate.setDate(maxDate.getDate() + 30);
 
@@ -153,13 +153,16 @@ const BookingModal: React.FC<BookingModalProps> = ({
             : "",
       };
 
-      const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/bookings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        "https://okhrestaurant-c9203e24f066.herokuapp.com/api/bookings",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
         },
-        body: JSON.stringify(payload),
-      });
+      );
 
       const data = await res.json();
 
@@ -239,6 +242,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
         </select>
         <input
           name="numberOfPeople"
+          type="number"
           placeholder={t.guests}
           onChange={handleChange}
         />

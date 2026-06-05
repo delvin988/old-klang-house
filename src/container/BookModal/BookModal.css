@@ -68,9 +68,10 @@
 .modal__container input,
 .modal__container textarea,
 .modal__container select {
-  width: 100%;
+    width: 100%;
   margin-bottom: 1rem;
   padding: 10px;
+  box-sizing: border-box;
   border-radius: 6px;
   border: 1px solid #D6C5A4;
   background: #FFFDF9;
@@ -244,4 +245,13 @@
 
 .successModal button:hover {
   background: #6f2e24;
+}
+
+.modal__container input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  height: 42px;
+
+  text-align: center;
 }

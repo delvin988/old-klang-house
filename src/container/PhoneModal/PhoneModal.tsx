@@ -2,6 +2,7 @@ import React from "react";
 import "../BookModal/BookModal.css";
 
 type Props = {
+  language: "en" | "id";
   phone: string;
   setPhone: (v: string) => void;
   setVerifiedPhone: (v: string) => void;
@@ -10,6 +11,7 @@ type Props = {
 };
 
 const PhoneModal: React.FC<Props> = ({
+  language,
   phone,
   setPhone,
   setVerifiedPhone,
@@ -17,15 +19,40 @@ const PhoneModal: React.FC<Props> = ({
   onClose,
 }) => {
   const [loading, setLoading] = React.useState(false);
+  const translations = {
+    en: {
+      title: "Book a Table",
+      placeholder: "Enter your WhatsApp number to verification code.",
+      sendOtp: "Send Code",
+      sending: "Sending...",
+      invalidPhone: "Invalid phone number",
+      enterPhone: "Please enter phone number",
+      otpSent: "Verification code sent to your WhatsApp",
+      failed: "Failed to send verification code",
+    },
 
+    id: {
+      title: "Reservasi Meja",
+      placeholder:
+        "Masukkan nomor WhatsApp untuk kode verifikasi.",
+      sendOtp: "Kirim Kode",
+      sending: "Mengirim...",
+      invalidPhone: "Nomor telepon tidak valid",
+      enterPhone: "Silakan masukkan nomor telepon",
+      otpSent: "Kode verifikasi telah dikirim ke WhatsApp Anda",
+      failed: "Gagal mengirim kode verifikasi",
+    },
+  };
+
+  const t = translations[language];
   const handleSendOtp = async () => {
     const cleanPhone = phone.replace(/\D/g, "");
     if (cleanPhone.length < 10 || cleanPhone.length > 15) {
-      alert("Invalid Indonesian phone number");
+      alert(t.invalidPhone);
       return;
     }
     if (!phone) {
-      alert("Please enter phone number");
+      alert(t.enterPhone);
       return;
     }
 
@@ -42,13 +69,20 @@ const PhoneModal: React.FC<Props> = ({
 
       const data = await res.json();
 
-      alert(`OTP: ${data.otp}`);
-      setVerifiedPhone(phone); // simpan ke next step
+      if (!res.ok) {
+        throw new Error(data.message || t.failed);
+      }
+
+      alert(t.otpSent);
+
+      setVerifiedPhone(phone);
       setPhone("");
+
       onSuccess();
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      alert("Failed to send OTP");
+
+      alert(err.message || t.failed);
     } finally {
       setLoading(false);
     }
@@ -61,10 +95,10 @@ const PhoneModal: React.FC<Props> = ({
           ×
         </button>
 
-        <h2 className="modal__title">Login with Phone</h2>
+        <h2 className="modal__title">{t.title}</h2>
 
         <input
-          placeholder="Phone Number (Indonesia Number)"
+          placeholder={t.placeholder}
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
@@ -74,7 +108,7 @@ const PhoneModal: React.FC<Props> = ({
           onClick={handleSendOtp}
           disabled={loading}
         >
-          {loading ? "Sending..." : "Send OTP"}
+          {loading ? t.sending : t.sendOtp}
         </button>
       </div>
     </div>

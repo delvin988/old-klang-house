@@ -1,26 +1,74 @@
-import React from 'react';
-import { motion, useInView } from 'framer-motion';
+import React from "react";
+import { motion, useInView } from "framer-motion";
 
-import { SubHeading, MenuItem } from '../../components';
-import { data, images } from '../../constants';
-import './SpecialMenu.css';
+import { SubHeading, MenuItem } from "../../components";
+import { data, images } from "../../constants";
+import "./SpecialMenu.css";
 
 const easeSmooth = [0.65, 0, 0.35, 1] as const;
+const translations = {
+  en: {
+    subtitle: "Discover Our Flavors",
+    title: "Signature Selections",
+    signature: "Foods",
+    beverages: "Drinks",
+  },
 
-const SpecialMenu = () => {
+  id: {
+    subtitle: "Temukan Cita Rasa Kami",
+    title: "Menu Pilihan",
+    signature: "Makanan",
+    beverages: "Minuman",
+  },
+};
+type Props = {
+  language: "en" | "id";
+};
+
+const SpecialMenu: React.FC<Props> = ({ language }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.15 });
+  const t = translations[language];
+  const [menus, setMenus] = React.useState<any[]>([]);
+  const getLanguageValue = (value: string, language: "en" | "id") => {
+    const match = value.match(/EN\/(.*?)\/ID\/(.*)/);
 
+    if (!match) {
+      return value;
+    }
+
+    return language === "en" ? match[1] : match[2];
+  };
+  React.useEffect(() => {
+    fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/menus")
+      .then((res) => res.json())
+      .then((data) => {
+        const specialMenus = data.filter((menu: any) => menu.todaySpecial);
+
+        setMenus(specialMenus);
+      });
+  }, []);
+  const foodMenus = menus.filter(
+    (menu) => menu.category.name === "Today special makanan",
+  );
+
+  const beverageMenus = menus.filter(
+    (menu) => menu.category.name === "Today special minuman",
+  );
   return (
-    <div ref={ref} className="app__specialMenu app__bg flex__center section__padding" id="menu">
+    <div
+      ref={ref}
+      className="app__specialMenu app__bg flex__center section__padding"
+      id="menu"
+    >
       <motion.div
         className="app__specialMenu-title"
         initial={{ opacity: 0, y: -32 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.9, ease: easeSmooth }}
       >
-        <SubHeading style={{ color: "#6B5E4B" }} title="Menu that fits your palatte" />
-        <h1 className="headtext__cormorant">Today&apos;s Special</h1>
+        <SubHeading title={t.subtitle} />
+        <h1 className="headtext__cormorant">{t.title}</h1>
       </motion.div>
 
       <div className="app__specialMenu-menu">
@@ -30,20 +78,29 @@ const SpecialMenu = () => {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: easeSmooth, delay: 0.1 }}
         >
-          <p className="app__specialMenu-menu_heading">Our Signature</p>
+          <p className="app__specialMenu-menu_heading">{t.signature}</p>
           <div className="app__specialMenu_menu_items">
-            {data.bakKutTehMenu.map((menu, index) => (
-              <MenuItem key={menu.title + index} title={menu.title} price={menu.price} tags={menu.tags} />
+            {foodMenus.map((menu) => (
+              <MenuItem
+                key={menu.id}
+                title={getLanguageValue(menu.name, language)}
+                price=""
+                tags={getLanguageValue(menu.description, language)}
+              />
             ))}
           </div>
         </motion.div>
 
         <motion.div
           className="app__specialMenu-menu_img"
-          style={{ transformOrigin: 'center bottom' }}
-          initial={{ opacity: 0, y: '60%' }}
+          style={{ transformOrigin: "center bottom" }}
+          initial={{ opacity: 0, y: "60%" }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.15, ease: [0.22, 0.61, 0.36, 1], delay: 0.2 }}
+          transition={{
+            duration: 1.15,
+            ease: [0.22, 0.61, 0.36, 1],
+            delay: 0.2,
+          }}
         >
           <img src={images.menu} alt="menu__img" />
         </motion.div>
@@ -54,10 +111,15 @@ const SpecialMenu = () => {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: easeSmooth, delay: 0.1 }}
         >
-          <p className="app__specialMenu-menu_heading">Beverages</p>
+          <p className="app__specialMenu-menu_heading">{t.beverages}</p>
           <div className="app__specialMenu_menu_items">
-            {data.beverages.map((beverages, index) => (
-              <MenuItem key={beverages.title + index} title={beverages.title} price={beverages.price} tags={beverages.tags} />
+            {beverageMenus.map((menu) => (
+              <MenuItem
+                key={menu.id}
+                title={getLanguageValue(menu.name, language)}
+                price=""
+                tags={getLanguageValue(menu.description, language)}
+              />
             ))}
           </div>
         </motion.div>

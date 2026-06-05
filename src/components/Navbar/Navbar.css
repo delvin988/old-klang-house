@@ -66,6 +66,8 @@
 
 .app__navbar-smallscreen {
   display: none;
+  align-items: center;
+  gap: 8px;
 }
 
 .app__navbar-smallscreen_overlay {
@@ -121,6 +123,7 @@
 
   .app__navbar-smallscreen {
     display: flex;
+    align-items: center;
   }
 }
 
@@ -139,4 +142,11 @@
   .app__navbar-logo .logo__icon {
     width: 85px;
   }
+}
+
+.language-select {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }

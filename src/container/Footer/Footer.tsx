@@ -3,17 +3,50 @@ import { motion, useInView } from "framer-motion";
 import { FiFacebook, FiTwitter, FiInstagram, FiX } from "react-icons/fi";
 import { FaTwitter } from "react-icons/fa";
 
-
 import { FooterOverlay, Newsletter } from "../../components";
 import { images } from "../../constants";
 import "./Footer.css";
 
 const easeSmooth = [0.65, 0, 0.35, 1] as const;
+const translations = {
+  en: {
+    contactUs: "Contact Us",
 
-const Footer = () => {
+    quote:
+      "The best way to find yourself is to lose yourself in the service of others.",
+
+    workingHours: "Working Hours",
+
+    mondayFriday: "Monday-Friday:",
+
+    saturdaySunday: "Saturday-Sunday:",
+
+    copyright: "Restaurant Old Klang House. All Rights reserved.",
+  },
+
+  id: {
+    contactUs: "Hubungi Kami",
+
+    quote:
+      "Cara terbaik untuk menemukan diri Anda adalah dengan mengabdikan diri dalam melayani orang lain.",
+
+    workingHours: "Jam Operasional",
+
+    mondayFriday: "Senin-Jumat:",
+
+    saturdaySunday: "Sabtu-Minggu:",
+
+    copyright: "Restaurant Old Klang House. Hak cipta dilindungi.",
+  },
+};
+type Props = {
+  language: "en" | "id";
+};
+
+const Footer: React.FC<Props> = ({ language }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
-
+  const t = translations[language];
   return (
     <div ref={ref} className="app__footer app__bg section__padding" id="login">
       {/* <FooterOverlay /> */}
@@ -26,7 +59,7 @@ const Footer = () => {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: easeSmooth, delay: 0.1 }}
         >
-          <h1 className="app__footer-headtext">Contact Us</h1>
+          <h1 className="app__footer-headtext">{t.contactUs}</h1>
           <p className="p__opensans">9 W 53rd St, Jakarta, JKT 10019, IDN</p>
           <p className="p__opensans">+62 821-1682-4234</p>
         </motion.div>
@@ -39,8 +72,7 @@ const Footer = () => {
         >
           <img src={images.okhWord} alt="footer_logo" />
           <p className="p__opensans">
-            &quot;The best way to find yourself is to lose yourself in the service
-            of others.&quot;
+            &quot;{t.quote}&quot;
           </p>
           <img
             src={images.spoon}
@@ -61,10 +93,10 @@ const Footer = () => {
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: easeSmooth, delay: 0.1 }}
         >
-          <h1 className="app__footer-headtext">Working Hours</h1>
-          <p className="p__opensans">Monday-Friday:</p>
+          <h1 className="app__footer-headtext"> {t.workingHours}</h1>
+          <p className="p__opensans">{t.mondayFriday}</p>
           <p className="p__opensans">08:00 am - 12:00 am</p>
-          <p className="p__opensans">Saturday-Sunday:</p>
+          <p className="p__opensans">{t.saturdaySunday}</p>
           <p className="p__opensans">07:00 am - 11:00 pm</p>
         </motion.div>
       </div>
@@ -76,7 +108,7 @@ const Footer = () => {
         transition={{ duration: 0.8, ease: easeSmooth, delay: 0.5 }}
       >
         <p className="p__opensans">
-          {new Date().getFullYear()} Restaurant Old Klang House. All Rights reserved.
+          {new Date().getFullYear()} {t.copyright}
         </p>
       </motion.div>
     </div>

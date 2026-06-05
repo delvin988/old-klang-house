@@ -8,16 +8,39 @@ import "./Navbar.css";
 import PhoneModal from "../../container/PhoneModal/PhoneModal";
 import OtpModal from "../../container/OtpModal/OtpModal";
 
+type Props = {
+  language: "en" | "id";
+  setLanguage: React.Dispatch<React.SetStateAction<"en" | "id">>;
+};
 const navEase = [0.25, 0.46, 0.45, 0.94] as const;
+const translations = {
+  en: {
+    home: "Home",
+    about: "About",
+    menu: "Menu",
+    contact: "Contact",
+    messageUs: "Message Us",
+    bookTable: "Book Table",
+  },
 
-const Navbar = () => {
+  id: {
+    home: "Beranda",
+    about: "Tentang Kami",
+    menu: "Menu",
+    contact: "Kontak",
+    messageUs: "Hubungi Kami",
+    bookTable: "Reservasi Meja",
+  },
+};
+const Navbar: React.FC<Props> = ({ language, setLanguage }) => {
   const [step, setStep] = React.useState<"phone" | "otp" | "booking" | null>(
     null,
   );
   const [phone, setPhone] = React.useState("");
   const [verifiedPhone, setVerifiedPhone] = React.useState("");
   const [toggleMenu, setToggleMenu] = React.useState(false);
-
+  const [showLanguage, setShowLanguage] = React.useState(false);
+  const t = translations[language];
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const href = (e.currentTarget.getAttribute("href") || "").trim();
     if (href.startsWith("#")) {
@@ -44,36 +67,57 @@ const Navbar = () => {
         <ul className="app__navbar-links">
           <li className="p__opensans">
             <a href="#home" onClick={handleNavClick}>
-              Home
+              {t.home}
             </a>
           </li>
           <li className="p__opensans">
             <a href="#about" onClick={handleNavClick}>
-              About
+              {t.about}
             </a>
           </li>
           <li className="p__opensans">
             <a href="#menu" onClick={handleNavClick}>
-              Menu
+              {t.menu}
             </a>
           </li>
           {/* <li className="p__opensans"><a href="#awards" onClick={handleNavClick}>Awards</a></li> */}
           <li className="p__opensans">
             <a href="#contact" onClick={handleNavClick}>
-              Contact
+              {t.contact}
             </a>
           </li>
         </ul>
         <div className="app__navbar-login">
+          <span
+            style={{
+              margin: "0 1rem",
+              position: "relative",
+            }}
+          >
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as "en" | "id")}
+              className="p__opensans language-select"
+            >
+              <option value="en">EN</option>
+
+              <option value="id">ID</option>
+            </select>
+          </span>
+
+          <div />
+
           <a
             href="https://wa.me/6282116824234"
             className="p__opensans"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Message Us
+            {t.messageUs}
           </a>
+
           <div />
+
           <button
             className="p__opensans"
             onClick={() => setStep("phone")}
@@ -84,10 +128,41 @@ const Navbar = () => {
               marginLeft: "1rem",
             }}
           >
-            Book Table
-          </button>{" "}
+            {t.bookTable}{" "}
+          </button>
         </div>
+
         <div className="app__navbar-smallscreen">
+          <div style={{ position: "relative" }}>
+            <span
+              className="p__opensans"
+              style={{
+                marginRight: "12px",
+                cursor: "pointer",
+                color: "#5A4632",
+                fontSize: "14px",
+              }}
+            >
+              {language === "en" ? "EN" : "ID"} ▼
+            </span>
+
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as "en" | "id")}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                opacity: 0,
+                cursor: "pointer",
+              }}
+            >
+              <option value="en">EN</option>
+              <option value="id">ID</option>
+            </select>
+          </div>
           <GiHamburgerMenu
             color="#5A4632"
             fontSize={27}
@@ -103,23 +178,23 @@ const Navbar = () => {
               <ul className="app__navbar-smallscreen_links">
                 <li>
                   <a href="#home" onClick={handleNavClick}>
-                    Home
+                    {t.home}
                   </a>
                 </li>
                 <li>
                   <a href="#about" onClick={handleNavClick}>
-                    About
+                    {t.about}
                   </a>
                 </li>
                 <li>
                   <a href="#menu" onClick={handleNavClick}>
-                    Menu
+                    {t.menu}
                   </a>
                 </li>
                 {/* <li><a href="#awards" onClick={handleNavClick}>Awards</a></li> */}
                 <li>
                   <a href="#contact" onClick={handleNavClick}>
-                    Contact
+                    {t.contact}
                   </a>
                 </li>
                 <li>
@@ -128,7 +203,7 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Message Us
+                    {t.messageUs}
                   </a>
                 </li>
                 <li>
@@ -140,7 +215,7 @@ const Navbar = () => {
                       setToggleMenu(false);
                     }}
                   >
-                    Book Table
+                    {t.bookTable}
                   </a>
                 </li>
               </ul>
@@ -153,6 +228,7 @@ const Navbar = () => {
         <PhoneModal
           phone={phone}
           setPhone={setPhone}
+          language={language}
           setVerifiedPhone={setVerifiedPhone}
           onSuccess={() => setStep("otp")}
           onClose={() => setStep(null)}
@@ -162,6 +238,7 @@ const Navbar = () => {
       {step === "otp" && (
         <OtpModal
           phone={verifiedPhone}
+          language={language}
           onSuccess={() => setStep("booking")}
           onClose={() => setStep(null)}
         />
@@ -170,6 +247,7 @@ const Navbar = () => {
       {step === "booking" && (
         <BookingModal
           open={true}
+          language={language}
           setOpen={() => setStep(null)}
           phone={verifiedPhone}
         />

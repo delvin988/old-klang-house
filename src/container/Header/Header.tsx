@@ -39,21 +39,53 @@ const itemVariants = {
     transition: { duration: 1.1, ease: easeSmooth },
   },
 };
+const translations = {
+  en: {
+    subtitle: "Savour The Authentic Taste",
 
-const Header = () => {
-  const [step, setStep] = React.useState<
-    "phone" | "otp" | "booking" | null
-  >(null);
+    title: "The Essence Of Bak Kut Teh",
+
+    description:
+      "A rich and aromatic broth, carefully prepared with premium ingredients and slow-cooked to perfection. Every bowl delivers comforting warmth, deep flavors, and an unforgettable dining experience.",
+
+    button: "Book A Table",
+  },
+
+  id: {
+    subtitle: "Nikmati Cita Rasa Otentik",
+
+    title: "Esensi Bak Kut Teh",
+
+    description:
+      "Kuah yang kaya rasa dan aromatik, dibuat dengan bahan-bahan pilihan serta dimasak perlahan hingga sempurna. Setiap mangkuk menghadirkan kehangatan, cita rasa yang mendalam, dan pengalaman bersantap yang tak terlupakan.",
+
+    button: "Reservasi Meja",
+  },
+};
+
+type Props = {
+  language: "en" | "id";
+  setLanguage: React.Dispatch<
+    React.SetStateAction<"en" | "id">
+  >;
+};
+
+const Header: React.FC<Props> = ({
+  language,
+  setLanguage,
+}) => {
+  const [step, setStep] = React.useState<"phone" | "otp" | "booking" | null>(
+    null,
+  );
 
   const [phone, setPhone] = React.useState("");
-
-  const [verifiedPhone, setVerifiedPhone] =
-    React.useState("");
+  const [verifiedPhone, setVerifiedPhone] = React.useState("");
+  const t = translations[language];
 
   return (
     <>
       <div className="app__header-wrapper">
-        <Navbar />
+        <Navbar language={language} setLanguage={setLanguage} />
 
         <motion.div
           className="app__header app__bg app__wrapper section__padding"
@@ -67,14 +99,11 @@ const Header = () => {
             variants={leftColumnVariants}
           >
             <motion.div variants={itemVariants}>
-              <SubHeading title="Savour The Authentic Taste" />
+              <SubHeading title={t.subtitle} />
             </motion.div>
 
-            <motion.h1
-              className="app__header-h1"
-              variants={itemVariants}
-            >
-              The Essence Of Bak Kut Teh
+            <motion.h1 className="app__header-h1" variants={itemVariants}>
+              {t.title}
             </motion.h1>
 
             <motion.p
@@ -82,12 +111,7 @@ const Header = () => {
               style={{ margin: "2rem 0" }}
               variants={itemVariants}
             >
-              A rich and aromatic herbal broth,
-              slow-cooked with tender pork ribs and
-              infused with traditional Malaysian
-              spices. A timeless comfort dish that
-              delivers depth, warmth, and unforgettable
-              flavor in every bite.
+              {t.description}
             </motion.p>
 
             <motion.div variants={itemVariants}>
@@ -96,7 +120,7 @@ const Header = () => {
                 className="custom__button"
                 onClick={() => setStep("phone")}
               >
-                Book A Table
+                {t.button}
               </button>
             </motion.div>
           </motion.div>
@@ -143,6 +167,7 @@ const Header = () => {
           <PhoneModal
             phone={phone}
             setPhone={setPhone}
+            language={language}
             setVerifiedPhone={setVerifiedPhone}
             onSuccess={() => setStep("otp")}
             onClose={() => setStep(null)}
@@ -152,6 +177,7 @@ const Header = () => {
         {step === "otp" && (
           <OtpModal
             phone={verifiedPhone}
+            language={language}
             onSuccess={() => setStep("booking")}
             onClose={() => setStep(null)}
           />
@@ -160,6 +186,7 @@ const Header = () => {
         {step === "booking" && (
           <BookingModal
             open={true}
+            language={language}
             setOpen={() => setStep(null)}
             phone={verifiedPhone}
           />

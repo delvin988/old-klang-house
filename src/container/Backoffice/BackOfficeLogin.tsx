@@ -26,7 +26,7 @@ const BackofficeLogin = () => {
       setLoading(true);
 
       const res = await fetch(
-        "https://okhrestaurant-c9203e24f066.herokuapp.com/api/auth/login",
+        "https://okhrestaurant-ca7148d529c4.herokuapp.com/api/auth/login",
         {
           method: "POST",
 

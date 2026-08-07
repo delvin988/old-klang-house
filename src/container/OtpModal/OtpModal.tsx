@@ -48,7 +48,7 @@ const OtpModal: React.FC<Props> = ({ language, phone, onSuccess, onClose }) => {
     try {
       setLoading(true);
 
-      const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/auth/verify-otp", {
+      const res = await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/auth/verify-otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

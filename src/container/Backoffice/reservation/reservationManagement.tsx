@@ -39,7 +39,7 @@ const ReservationManagement = () => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      `https://okhrestaurant-c9203e24f066.herokuapp.com/api/bookings/reservation?startDate=${startDate}&endDate=${endDate}`,
+      `https://okhrestaurant-ca7148d529c4.herokuapp.com/api/bookings/reservation?startDate=${startDate}&endDate=${endDate}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

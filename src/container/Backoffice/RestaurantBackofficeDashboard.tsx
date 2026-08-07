@@ -36,7 +36,7 @@ const RestaurantBackofficeDashboard = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/bookings/today", {
+      const res = await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/bookings/today", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -61,7 +61,7 @@ const RestaurantBackofficeDashboard = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/bookings/upcoming", {
+      const res = await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/bookings/upcoming", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -111,7 +111,7 @@ const RestaurantBackofficeDashboard = () => {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `https://okhrestaurant-c9203e24f066.herokuapp.com/api/bookings/${id}/status`,
+        `https://okhrestaurant-ca7148d529c4.herokuapp.com/api/bookings/${id}/status`,
         {
           method: "PUT",
 

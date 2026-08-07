@@ -45,7 +45,7 @@ const CustomerManagement = () => {
   const loadCustomers = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/customers", {
+    const res = await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/customers", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -131,7 +131,7 @@ const CustomerManagement = () => {
 
     const token = localStorage.getItem("token");
 
-    const res = await fetch(`https://okhrestaurant-c9203e24f066.herokuapp.com/api/customers/${phone}`, {
+    const res = await fetch(`https://okhrestaurant-ca7148d529c4.herokuapp.com/api/customers/${phone}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -146,7 +146,7 @@ const CustomerManagement = () => {
   const exportCustomers = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/customers/download", {
+    const res = await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/customers/download", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -170,7 +170,7 @@ const CustomerManagement = () => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      `https://okhrestaurant-c9203e24f066.herokuapp.com/api/customers/${phone}/download`,
+      `https://okhrestaurant-ca7148d529c4.herokuapp.com/api/customers/${phone}/download`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

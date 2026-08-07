@@ -76,7 +76,7 @@ const MenuManagement = () => {
   const loadMenus = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/menus", {
+    const res = await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menus", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -125,7 +125,7 @@ const MenuManagement = () => {
   const loadCategories = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/menu-categories", {
+    const res = await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menu-categories", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -172,7 +172,7 @@ const MenuManagement = () => {
     };
 
     if (editingMenu) {
-      await fetch(`https://okhrestaurant-c9203e24f066.herokuapp.com/api/menus/${editingMenu.id}`, {
+      await fetch(`https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menus/${editingMenu.id}`, {
         method: "PUT",
 
         headers: {
@@ -184,7 +184,7 @@ const MenuManagement = () => {
         body: JSON.stringify(payload),
       });
     } else {
-      await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/menus", {
+      await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menus", {
         method: "POST",
 
         headers: {
@@ -205,7 +205,7 @@ const MenuManagement = () => {
   const toggleStatus = async (menu: Menu) => {
     const token = localStorage.getItem("token");
 
-    await fetch(`https://okhrestaurant-c9203e24f066.herokuapp.com/api/menus/${menu.id}/status`, {
+    await fetch(`https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menus/${menu.id}/status`, {
       method: "PUT",
 
       headers: {
@@ -229,7 +229,7 @@ const MenuManagement = () => {
 
     const token = localStorage.getItem("token");
 
-    await fetch(`https://okhrestaurant-c9203e24f066.herokuapp.com/api/menus/${id}`, {
+    await fetch(`https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menus/${id}`, {
       method: "DELETE",
 
       headers: {
@@ -247,7 +247,7 @@ const MenuManagement = () => {
   const saveCategory = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/menu-categories", {
+    const res = await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menu-categories", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

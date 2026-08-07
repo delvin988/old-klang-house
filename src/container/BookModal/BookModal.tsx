@@ -154,7 +154,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
       };
 
       const res = await fetch(
-        "https://okhrestaurant-c9203e24f066.herokuapp.com/api/bookings",
+        "https://okhrestaurant-ca7148d529c4.herokuapp.com/api/bookings",
         {
           method: "POST",
           headers: {

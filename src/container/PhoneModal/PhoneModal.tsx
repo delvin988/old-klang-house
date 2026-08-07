@@ -59,7 +59,7 @@ const PhoneModal: React.FC<Props> = ({
     try {
       setLoading(true);
 
-      const res = await fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/auth/send-otp", {
+      const res = await fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/auth/send-otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

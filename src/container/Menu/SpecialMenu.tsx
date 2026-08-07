@@ -40,7 +40,7 @@ const SpecialMenu: React.FC<Props> = ({ language }) => {
     return language === "en" ? match[1] : match[2];
   };
   React.useEffect(() => {
-    fetch("https://okhrestaurant-c9203e24f066.herokuapp.com/api/menus")
+    fetch("https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menus")
       .then((res) => res.json())
       .then((data) => {
         const specialMenus = data.filter((menu: any) => menu.todaySpecial);

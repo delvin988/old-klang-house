@@ -195,26 +195,30 @@ const Header: React.FC<Props> = ({
               delay: 0.45,
             }}
           >
-            <AnimatePresence mode="wait">
+            <AnimatePresence initial={false}>
               <motion.img
                 key={currentImage}
                 src={heroImages[currentImage]}
                 alt={`hero-${currentImage + 1}`}
+                className="hero__slide-image"
+
                 initial={{
                   opacity: 0,
-                  scale: 0.985,
                 }}
+
                 animate={{
                   opacity: 1,
-                  scale: 1,
                 }}
+
                 exit={{
                   opacity: 0,
-                  scale: 1.015,
                 }}
+
                 transition={{
-                  duration: 1,
-                  ease: easeSmooth,
+                  opacity: {
+                    duration: 1.2,
+                    ease: easeSmooth,
+                  },
                 }}
               />
             </AnimatePresence>

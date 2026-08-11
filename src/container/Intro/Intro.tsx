@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { BsFillPlayFill, BsPauseFill } from 'react-icons/bs';
 
-import { meal } from '../../constants';
 import './Intro.css';
 
 const easeSmooth = [0.65, 0, 0.35, 1] as const;
@@ -57,14 +56,7 @@ const Intro = () => {
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 1.2, ease: easeSmooth }}
     >
-      <video
-        ref={vidRef}
-        src={meal}
-        loop
-        playsInline
-        controls={false}
-        muted
-      />
+      
       <div className="app__video-overlay flex__center">
         <div className="app__video-overlay_content">
           <motion.p

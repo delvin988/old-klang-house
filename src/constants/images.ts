@@ -1,5 +1,5 @@
 import G from '../assets/G.png';
-import menu from '../assets/menu.png';
+import menu from '../assets/menu.webp';
 import overlaybg from '../assets/overlaybg.png';
 import spoon from '../assets/spoon.svg';
 import findus from '../assets/findus.png';
@@ -23,6 +23,8 @@ import food_header18 from '../assets/food_new18.webp'
 import food_header19 from '../assets/food_new19.webp'
 import food_header20 from '../assets/food_new20.webp'
 import food_header22 from '../assets/food_new22.webp'
+import menuQr from '../assets/menu-qr.png'
+import menuOkh from '../assets/OKH_MENU.png'
 
 export default {
   G,
@@ -50,4 +52,6 @@ export default {
   food_header19,
   food_header20,
   food_header22,
+  menuQr,
+  menuOkh,
 };

@@ -60,8 +60,8 @@ const Footer: React.FC<Props> = ({ language }) => {
           transition={{ duration: 1, ease: easeSmooth, delay: 0.1 }}
         >
           <h1 className="app__footer-headtext">{t.contactUs}</h1>
-          <p className="p__opensans">9 W 53rd St, Jakarta, JKT 10019, IDN</p>
-          <p className="p__opensans">+62 821-1682-4234</p>
+          <p className="p__opensans">WA : +62 85218281537</p>
+          <p className="p__opensans"><FiInstagram /> : oldklanghousejkt</p>
         </motion.div>
 
         <motion.div
@@ -80,14 +80,9 @@ const Footer: React.FC<Props> = ({ language }) => {
             style={{ marginTop: 15 }}
             alt="spoon"
           />
-          <div className="app__footer-links_icons">
-            <FiFacebook />
-            <FiTwitter />
-            <FiInstagram />
-          </div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className="app__footer-links_work"
           initial={{ opacity: 0, x: 56 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -98,7 +93,7 @@ const Footer: React.FC<Props> = ({ language }) => {
           <p className="p__opensans">08:00 am - 12:00 am</p>
           <p className="p__opensans">{t.saturdaySunday}</p>
           <p className="p__opensans">07:00 am - 11:00 pm</p>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <motion.div

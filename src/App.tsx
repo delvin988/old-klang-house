@@ -2,7 +2,7 @@ import React from "react";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import { AboutUs, FindUs, Footer, Header, SpecialMenu } from "./container";
+import { AboutUs, FindUs, Footer, Header, SpecialMenu, PromoPopup } from "./container";
 
 import RestaurantBackofficeDashboard from "./container/Backoffice/RestaurantBackofficeDashboard";
 import BackofficeLogin from "./container/Backoffice/BackOfficeLogin";
@@ -33,6 +33,7 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => (
     <FindUs language={language} />
 
     <Footer language={language}/>
+    <PromoPopup language={language}/>
   </div>
 );
 

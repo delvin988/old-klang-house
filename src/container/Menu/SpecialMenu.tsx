@@ -16,7 +16,7 @@ const translations = {
 
   id: {
     subtitle: "Temukan Cita Rasa Kami",
-    title: "Menu Pilihan",
+    title: "Hidangan Pilihan",
     signature: "Makanan",
     beverages: "Minuman",
   },

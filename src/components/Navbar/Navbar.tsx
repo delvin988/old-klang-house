@@ -17,8 +17,8 @@ const translations = {
   en: {
     home: "Home",
     about: "About",
-    menu: "Menu",
-    contact: "Contact",
+    menu: "Signature Selection",
+    contact: "Menu and Location",
     messageUs: "Message Us",
     bookTable: "Book Table",
   },
@@ -26,8 +26,8 @@ const translations = {
   id: {
     home: "Beranda",
     about: "Tentang Kami",
-    menu: "Menu",
-    contact: "Kontak",
+    menu: "Hidangan Pilihan",
+    contact: "Menu dan Lokasi",
     messageUs: "Hubungi Kami",
     bookTable: "Reservasi Meja",
   },
@@ -108,7 +108,7 @@ const Navbar: React.FC<Props> = ({ language, setLanguage }) => {
           <div />
 
           <a
-            href="https://wa.me/6282116824234"
+            href="https://wa.me/6285218281537"
             className="p__opensans"
             target="_blank"
             rel="noopener noreferrer"

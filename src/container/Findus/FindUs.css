@@ -1,0 +1,873 @@
+/* ======================================================
+   FIND US - MENU AND LOCATION
+====================================================== */
+
+.app__findus {
+  position: relative;
+
+  width: 100%;
+  min-height: 850px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+/* ======================================================
+   MAIN CONTAINER
+====================================================== */
+
+.app__findus-container {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    90px
+    minmax(420px, 0.9fr);
+
+  align-items: center;
+
+  gap: 2rem;
+}
+
+
+/* ======================================================
+   LEFT
+====================================================== */
+
+.app__findus-left {
+  width: 100%;
+}
+
+
+.app__findus-title {
+  font-family: var(--font-base);
+
+  color: #a63a1f;
+
+  font-size: 84px;
+  font-weight: 500;
+
+  line-height: 0.98;
+
+  letter-spacing: -1px;
+
+  max-width: 650px;
+
+  margin-top: 1.2rem;
+  margin-bottom: 2.2rem;
+}
+
+
+.app__findus-intro {
+  max-width: 560px;
+
+  line-height: 1.7;
+
+  margin-bottom: 2.8rem;
+}
+
+
+/* ======================================================
+   INFORMATION
+====================================================== */
+
+.app__findus-info-block {
+  max-width: 600px;
+}
+
+
+.app__findus-info-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 0.8rem;
+}
+
+
+.app__findus-info-heading h3 {
+  font-family: var(--font-base);
+
+  color: #a63a1f;
+
+  font-size: 30px;
+  font-weight: 500;
+
+  margin: 0;
+}
+
+
+.app__findus-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #dcca87;
+
+  background: #8d281a;
+
+  border: 2px solid #dcca87;
+
+  font-size: 12px;
+}
+
+
+.app__findus-clock {
+  font-size: 24px;
+}
+
+
+.app__findus-address,
+.app__findus-hours {
+  padding-left: 62px;
+
+  max-width: 540px;
+
+  line-height: 1.7;
+}
+
+
+.app__findus-divider {
+  width: 430px;
+  max-width: 100%;
+
+  height: 1px;
+
+  background: rgba(166, 58, 31, 0.35);
+
+  margin: 2.2rem 0;
+}
+
+
+/* ======================================================
+   GET DIRECTIONS
+====================================================== */
+
+.app__findus-directions {
+  margin-top: 2rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.7rem;
+}
+
+
+.app__findus-button-icon {
+  font-size: 9px;
+
+  color: #a63a1f;
+}
+
+
+/* ======================================================
+   CENTER DIVIDER
+====================================================== */
+
+.app__findus-center-divider {
+  height: 520px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+
+  color: #dcca87;
+}
+
+
+.app__findus-center-divider span {
+  display: block;
+
+  width: 1px;
+  height: 180px;
+
+  background: rgba(220, 202, 135, 0.75);
+}
+
+
+.app__findus-center-divider div {
+  font-size: 18px;
+}
+
+
+/* ======================================================
+   RIGHT
+====================================================== */
+
+.app__findus-right {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+/* ======================================================
+   MENU CARD
+====================================================== */
+
+.app__findus-menu-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 540px;
+
+  min-height: 650px;
+
+  padding:
+    3.6rem
+    3.5rem
+    3.3rem;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  background: rgba(255, 250, 240, 0.48);
+
+  border: 1px solid rgba(199, 157, 62, 0.85);
+
+  box-shadow:
+    0 12px 40px rgba(83, 49, 16, 0.06);
+}
+
+
+/* DOUBLE BORDER */
+.app__findus-menu-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+
+  border: 1px solid rgba(199, 157, 62, 0.35);
+
+  pointer-events: none;
+}
+
+
+/* ======================================================
+   MENU ICON
+====================================================== */
+
+.app__findus-menu-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #8d281a;
+
+  color: #dcca87;
+
+  border: 2px solid #dcca87;
+
+  font-size: 27px;
+
+  margin-bottom: 1.2rem;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* ======================================================
+   MENU TITLE
+====================================================== */
+
+.app__findus-menu-title {
+  font-family: var(--font-base);
+
+  font-size: 44px;
+
+  font-weight: 500;
+
+  color: #a63a1f;
+
+  margin: 0 0 0.8rem;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.app__findus-menu-description {
+  max-width: 380px;
+
+  line-height: 1.65;
+
+  margin: 0 auto 2rem;
+
+  text-align: center;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* ======================================================
+   QR
+====================================================== */
+
+.app__findus-qr-box {
+  width: 290px;
+  height: 290px;
+
+  padding: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  border: 1px solid #dcca87;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.app__findus-qr {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  background:transparent;
+  padding: 10px;
+}
+
+
+/* ======================================================
+   QR DIVIDER
+====================================================== */
+
+.app__findus-menu-separator {
+  width: 70%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.7rem;
+
+  margin: 1.8rem 0 1rem;
+
+  color: #a63a1f;
+}
+
+
+.app__findus-menu-separator span {
+  height: 1px;
+
+  flex: 1;
+
+  background: rgba(199, 157, 62, 0.65);
+}
+
+
+.app__findus-menu-separator div {
+  font-size: 10px;
+}
+
+
+/* ======================================================
+   SCAN
+====================================================== */
+
+.app__findus-scan-text {
+  font-family: var(--font-base);
+
+  color: #3c2d27;
+
+  font-size: 23px;
+
+  margin-bottom: 1.6rem;
+}
+
+
+/* ======================================================
+   VIEW MENU BUTTON
+====================================================== */
+
+.app__findus-menu-button {
+  min-width: 180px;
+}
+
+
+/* ======================================================
+   VERY LARGE DESKTOP
+====================================================== */
+
+@media screen and (min-width: 2000px) {
+
+  .app__findus {
+    min-height: 1050px;
+
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+
+  .app__findus-container {
+    max-width: 1800px;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      120px
+      minmax(520px, 0.9fr);
+
+    gap: 3rem;
+  }
+
+
+  .app__findus-title {
+    font-size: 110px;
+
+    max-width: 800px;
+
+    margin-bottom: 3rem;
+  }
+
+
+  .app__findus-intro {
+    max-width: 700px;
+
+    font-size: 22px;
+
+    margin-bottom: 3.5rem;
+  }
+
+
+  .app__findus-info-heading h3 {
+    font-size: 36px;
+  }
+
+
+  .app__findus-address,
+  .app__findus-hours {
+    font-size: 20px;
+  }
+
+
+  .app__findus-menu-card {
+    max-width: 650px;
+
+    min-height: 790px;
+
+    padding: 4.5rem;
+  }
+
+
+  .app__findus-menu-title {
+    font-size: 54px;
+  }
+
+
+  .app__findus-menu-description {
+    max-width: 450px;
+
+    font-size: 20px;
+  }
+
+
+  .app__findus-qr-box {
+    width: 360px;
+    height: 360px;
+  }
+
+
+  .app__findus-scan-text {
+    font-size: 28px;
+  }
+}
+
+
+/* ======================================================
+   TABLET / MOBILE
+====================================================== */
+
+@media screen and (max-width: 900px) {
+
+  .app__findus {
+    min-height: auto;
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+
+  .app__findus-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 4rem;
+  }
+
+
+  .app__findus-left {
+    width: 100%;
+  }
+
+
+  .app__findus-title {
+    font-size: 64px;
+
+    line-height: 1;
+
+    max-width: 600px;
+  }
+
+
+  .app__findus-intro {
+    max-width: 100%;
+  }
+
+
+  .app__findus-info-block {
+    max-width: 100%;
+  }
+
+
+  .app__findus-address,
+  .app__findus-hours {
+    max-width: 100%;
+  }
+
+
+  .app__findus-center-divider {
+    display: none;
+  }
+
+
+  .app__findus-right {
+    width: 100%;
+  }
+
+
+  .app__findus-menu-card {
+    max-width: 650px;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media screen and (max-width: 650px) {
+
+  .app__findus {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+
+  .app__findus-container {
+    gap: 3rem;
+  }
+
+
+  .app__findus-title {
+    font-size: 48px;
+
+    line-height: 1.02;
+
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+    max-width: 100%;
+  }
+
+
+  .app__findus-intro {
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    margin-bottom: 2rem;
+  }
+
+
+  .app__findus-info-heading {
+    gap: 0.8rem;
+  }
+
+
+  .app__findus-info-heading h3 {
+    font-size: 25px;
+  }
+
+
+  .app__findus-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .app__findus-address,
+  .app__findus-hours {
+    padding-left: 0;
+
+    margin-top: 1rem;
+
+    font-size: 14px;
+  }
+
+
+  .app__findus-divider {
+    margin: 1.8rem 0;
+  }
+
+
+  .app__findus-directions {
+    width: 100%;
+
+    margin-top: 1.6rem;
+  }
+
+
+  /* QR CARD */
+
+  .app__findus-menu-card {
+    width: 100%;
+
+    min-height: auto;
+
+    padding:
+      2.8rem
+      1.4rem
+      2.5rem;
+  }
+
+
+  .app__findus-menu-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 23px;
+  }
+
+
+  .app__findus-menu-title {
+    font-size: 38px;
+  }
+
+
+  .app__findus-menu-description {
+    max-width: 290px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 1.5rem;
+  }
+
+
+  .app__findus-qr-box {
+  width: 290px;
+  height: 290px;
+
+  padding: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 250, 240, 0.72);
+
+  border: 1px solid rgba(220, 202, 135, 0.75);
+
+  box-shadow:
+    0 8px 24px rgba(83, 49, 16, 0.08);
+
+  position: relative;
+  z-index: 2;
+}
+
+
+  .app__findus-menu-separator {
+    width: 80%;
+
+    margin-top: 1.5rem;
+  }
+
+
+  .app__findus-scan-text {
+    font-size: 20px;
+
+    margin-bottom: 1.4rem;
+  }
+
+
+  .app__findus-menu-button {
+    width: 100%;
+
+    max-width: 260px;
+  }
+}
+
+/* ======================================================
+   MENU POPUP
+====================================================== */
+
+.menu__popup-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.72);
+
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  z-index: 9999;
+}
+
+
+.menu__popup {
+  position: relative;
+
+  width: auto;
+  max-width: 90vw;
+
+  height: auto;
+  max-height: 90vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.menu__popup-image {
+  display: block;
+
+  width: auto;
+  max-width: 90vw;
+
+  height: auto;
+  max-height: 90vh;
+
+  object-fit: contain;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+.menu__popup-close {
+  position: absolute;
+
+  top: -18px;
+  right: -18px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid #dcca87;
+
+  background: #a63a1f;
+  color: #fff;
+
+  font-size: 28px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 2;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.menu__popup-close:hover {
+  transform: scale(1.08);
+
+  background: #7f2b18;
+}
+@media screen and (max-width: 650px) {
+
+  .menu__popup-overlay {
+    padding: 1rem;
+  }
+
+
+  .menu__popup-image {
+    max-width: 95vw;
+    max-height: 88vh;
+  }
+
+
+  .menu__popup-close {
+    top: -12px;
+    right: -8px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 24px;
+  }
+}

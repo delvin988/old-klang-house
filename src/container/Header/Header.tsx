@@ -67,12 +67,22 @@ const translations = {
 
 /* GAMBAR SLIDER */
 const heroImages = [
-  images.food_header2,
-  images.food_header5,
+  images.food_header3,
   images.food_header4,
+  images.food_header5,
   images.food_header7,
   images.food_header9,
-  images.food_header10
+  images.food_header10,
+  images.food_header11,
+  images.food_header12,
+  images.food_header14,
+  images.food_header15,
+  images.food_header16,
+  images.food_header17,
+  images.food_header18,
+  images.food_header19,
+  images.food_header20,
+  images.food_header22,
 ];
 
 type Props = {
@@ -97,13 +107,22 @@ const Header: React.FC<Props> = ({
   /* INI HARUS DI DALAM HEADER */
   const [currentImage, setCurrentImage] =
     React.useState(0);
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage(
+      (prev) => (prev - 1 + heroImages.length) % heroImages.length
+    );
+  };
 
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => {
         return (prev + 1) % heroImages.length;
       });
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -112,124 +131,124 @@ const Header: React.FC<Props> = ({
 
   return (
     <>
-    <div className="app__header-wrapper">
+      <div className="app__header-wrapper">
         <Navbar language={language} setLanguage={setLanguage} />
 
-      <motion.div
-        className="app__header app__bg app__wrapper section__padding"
-        id="home"
-        initial="hidden"
-        animate="visible"
-        variants={heroContainerVariants}
-      >
-        {/* LEFT */}
         <motion.div
-          className="app__wrapper_info"
-          variants={leftColumnVariants}
+          className="app__header app__bg app__wrapper section__padding"
+          id="home"
+          initial="hidden"
+          animate="visible"
+          variants={heroContainerVariants}
         >
-          <motion.div variants={itemVariants}>
-            <SubHeading title={t.subtitle} />
-          </motion.div>
-
-          <motion.h1
-            className="app__header-h1"
-            variants={itemVariants}
+          {/* LEFT */}
+          <motion.div
+            className="app__wrapper_info"
+            variants={leftColumnVariants}
           >
-            {t.title}
-          </motion.h1>
+            <motion.div variants={itemVariants}>
+              <SubHeading title={t.subtitle} />
+            </motion.div>
 
-          <motion.p
-            className="p__opensans"
-            style={{ margin: "2rem 0" }}
-            variants={itemVariants}
-          >
-            {t.description}
-          </motion.p>
-
-          <motion.div variants={itemVariants}>
-            <button
-              type="button"
-              className="custom__button"
-              onClick={() => setStep("phone")}
+            <motion.h1
+              className="app__header-h1"
+              variants={itemVariants}
             >
-              {t.button}
-            </button>
+              {t.title}
+            </motion.h1>
+
+            <motion.p
+              className="p__opensans"
+              style={{ margin: "2rem 0" }}
+              variants={itemVariants}
+            >
+              {t.description}
+            </motion.p>
+
+            <motion.div variants={itemVariants}>
+              <button
+                type="button"
+                className="custom__button"
+                onClick={() => setStep("phone")}
+              >
+                {t.button}
+              </button>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT IMAGE SLIDER */}
+          <motion.div
+            className="app__wrapper_img"
+            initial={{
+              opacity: 0,
+              x: 48,
+              scale: 0.97,
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              scale: 1,
+            }}
+            transition={{
+              duration: 1.35,
+              ease: easeSmooth,
+              delay: 0.45,
+            }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentImage}
+                src={heroImages[currentImage]}
+                alt={`hero-${currentImage + 1}`}
+                initial={{
+                  opacity: 0,
+                  scale: 0.985,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 1.015,
+                }}
+                transition={{
+                  duration: 1,
+                  ease: easeSmooth,
+                }}
+              />
+            </AnimatePresence>
           </motion.div>
         </motion.div>
 
-        {/* RIGHT IMAGE SLIDER */}
-        <motion.div
-          className="app__wrapper_img"
-          initial={{
-            opacity: 0,
-            x: 48,
-            scale: 0.97,
-          }}
-          animate={{
-            opacity: 1,
-            x: 0,
-            scale: 1,
-          }}
-          transition={{
-            duration: 1.35,
-            ease: easeSmooth,
-            delay: 0.45,
-          }}
-        >
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentImage}
-              src={heroImages[currentImage]}
-              alt={`hero-${currentImage + 1}`}
-              initial={{
-                opacity: 0,
-                x: 40,
-              }}
-              animate={{
-                opacity: 1,
-                x: 0,
-              }}
-              exit={{
-                opacity: 0,
-                x: -40,
-              }}
-              transition={{
-                duration: 0.7,
-                ease: easeSmooth,
-              }}
-            />
-          </AnimatePresence>
-        </motion.div>
-      </motion.div>
+        {step === "phone" && (
+          <PhoneModal
+            phone={phone}
+            setPhone={setPhone}
+            language={language}
+            setVerifiedPhone={setVerifiedPhone}
+            onSuccess={() => setStep("otp")}
+            onClose={() => setStep(null)}
+          />
+        )}
 
-      {step === "phone" && (
-        <PhoneModal
-          phone={phone}
-          setPhone={setPhone}
-          language={language}
-          setVerifiedPhone={setVerifiedPhone}
-          onSuccess={() => setStep("otp")}
-          onClose={() => setStep(null)}
-        />
-      )}
+        {step === "otp" && (
+          <OtpModal
+            phone={verifiedPhone}
+            language={language}
+            onSuccess={() => setStep("booking")}
+            onClose={() => setStep(null)}
+          />
+        )}
 
-      {step === "otp" && (
-        <OtpModal
-          phone={verifiedPhone}
-          language={language}
-          onSuccess={() => setStep("booking")}
-          onClose={() => setStep(null)}
-        />
-      )}
-
-      {step === "booking" && (
-        <BookingModal
-          open={true}
-          language={language}
-          setOpen={() => setStep(null)}
-          phone={verifiedPhone}
-        />
-      )}
+        {step === "booking" && (
+          <BookingModal
+            open={true}
+            language={language}
+            setOpen={() => setStep(null)}
+            phone={verifiedPhone}
+          />
+        )}
       </div>
     </>
   );

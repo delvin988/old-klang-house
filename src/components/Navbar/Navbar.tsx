@@ -118,18 +118,21 @@ const Navbar: React.FC<Props> = ({ language, setLanguage }) => {
 
           <div />
 
-          <button
+          <a
             className="p__opensans"
-            onClick={() => setStep("phone")}
+            href="https://wa.me/6285218281537"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               background: "transparent",
               border: "none",
               cursor: "pointer",
               marginLeft: "1rem",
+              textDecoration: "none",
             }}
           >
             {t.bookTable}{" "}
-          </button>
+          </a>
         </div>
 
         <div className="app__navbar-smallscreen">
@@ -208,12 +211,10 @@ const Navbar: React.FC<Props> = ({ language, setLanguage }) => {
                 </li>
                 <li>
                   <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setStep("phone");
-                      setToggleMenu(false);
-                    }}
+                    href="https://wa.me/6285218281537"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setToggleMenu(false)}
                   >
                     {t.bookTable}
                   </a>

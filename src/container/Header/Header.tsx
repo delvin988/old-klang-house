@@ -87,33 +87,26 @@ const heroImages = [
 
 type Props = {
   language: "en" | "id";
-  setLanguage: React.Dispatch<
-    React.SetStateAction<"en" | "id">
-  >;
+  setLanguage: React.Dispatch<React.SetStateAction<"en" | "id">>;
 };
 
-const Header: React.FC<Props> = ({
-  language,
-  setLanguage,
-}) => {
-  const [step, setStep] = React.useState<
-    "phone" | "otp" | "booking" | null
-  >(null);
+const Header: React.FC<Props> = ({ language, setLanguage }) => {
+  const [step, setStep] = React.useState<"phone" | "otp" | "booking" | null>(
+    null,
+  );
 
   const [phone, setPhone] = React.useState("");
-  const [verifiedPhone, setVerifiedPhone] =
-    React.useState("");
+  const [verifiedPhone, setVerifiedPhone] = React.useState("");
 
   /* INI HARUS DI DALAM HEADER */
-  const [currentImage, setCurrentImage] =
-    React.useState(0);
+  const [currentImage, setCurrentImage] = React.useState(0);
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % heroImages.length);
   };
 
   const prevImage = () => {
     setCurrentImage(
-      (prev) => (prev - 1 + heroImages.length) % heroImages.length
+      (prev) => (prev - 1 + heroImages.length) % heroImages.length,
     );
   };
 
@@ -150,10 +143,7 @@ const Header: React.FC<Props> = ({
               <SubHeading title={t.subtitle} />
             </motion.div>
 
-            <motion.h1
-              className="app__header-h1"
-              variants={itemVariants}
-            >
+            <motion.h1 className="app__header-h1" variants={itemVariants}>
               {t.title}
             </motion.h1>
 
@@ -166,13 +156,14 @@ const Header: React.FC<Props> = ({
             </motion.p>
 
             <motion.div variants={itemVariants}>
-              <button
-                type="button"
+              <a
+                href="https://wa.me/6285218281537"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="custom__button"
-                onClick={() => setStep("phone")}
               >
                 {t.button}
-              </button>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -201,19 +192,15 @@ const Header: React.FC<Props> = ({
                 src={heroImages[currentImage]}
                 alt={`hero-${currentImage + 1}`}
                 className="hero__slide-image"
-
                 initial={{
                   opacity: 0,
                 }}
-
                 animate={{
                   opacity: 1,
                 }}
-
                 exit={{
                   opacity: 0,
                 }}
-
                 transition={{
                   opacity: {
                     duration: 1.2,

@@ -2,11 +2,9 @@ import G from '../assets/G.png';
 import menu from '../assets/menu.webp';
 import overlaybg from '../assets/overlaybg.png';
 import spoon from '../assets/spoon.svg';
-import findus from '../assets/findus.png';
 import okh from '../assets/okh.png'
 import okhWord from '../assets/okhWord.png'
-import food from '../assets/food.png'
-import hanzi from '../assets/hanzi.png'
+import hanzi from '../assets/hanzi.webp'
 import food_header3 from '../assets/food_new3.webp'
 import food_header5 from '../assets/food_new5.webp'
 import food_header4 from '../assets/food_new4.webp'
@@ -31,10 +29,8 @@ export default {
   menu,
   overlaybg,
   spoon,
-  findus,
   okh,
   okhWord,
-  food,
   hanzi,
   food_header3,
   food_header4,

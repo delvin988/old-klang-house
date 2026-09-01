@@ -3,8 +3,7 @@ import {
   FiCalendar,
   FiCoffee,
   FiUsers,
-  FiBarChart2,
-  FiSettings,
+  FiGrid,
   FiLogOut,
 } from "react-icons/fi";
 
@@ -71,6 +70,16 @@ const BackofficeSidebar = ({ onLogout, isOpen, onClose }: Props) => {
           >
             <FiUsers />
             Customers
+          </NavLink>
+
+          <NavLink
+            to="/backoffice/tables"
+            className={({ isActive }) =>
+              isActive ? "sidebar__item active" : "sidebar__item"
+            }
+          >
+            <FiGrid />
+            Table Management
           </NavLink>
         </nav>
 

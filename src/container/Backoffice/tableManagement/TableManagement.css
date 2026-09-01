@@ -1,0 +1,741 @@
+.tableManagement {
+  width: 100%;
+  max-width: 1200px;
+
+  padding: 40px 20px;
+
+  margin: 0 auto;
+}
+
+.tableManagement__header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 28px;
+
+  flex-wrap: wrap;
+}
+
+.tableManagement__header h1 {
+  margin: 0 0 8px;
+
+  color: #8B3A2E;
+
+  font-size: 32px;
+}
+
+.tableManagement__header p {
+  margin: 0;
+
+  color: #7A6A58;
+
+  font-size: 15px;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+
+.tableManagement__summary {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.tableManagement__summaryCard {
+  background: #FFFFFF;
+
+  border: 1px solid #E5D7C3;
+
+  border-radius: 18px;
+
+  padding: 20px 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.tableManagement__summaryCard strong {
+  color: #8B3A2E;
+
+  font-size: 30px;
+}
+
+.tableManagement__summaryLabel {
+  color: #7A6A58;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   TABLE GRID
+========================= */
+
+.tableManagement__grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.tableManagement__card {
+  background: #FFFFFF;
+
+  border: 1px solid #E5D7C3;
+
+  border-radius: 20px;
+
+  padding: 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 270px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tableManagement__card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 30px rgba(72, 48, 32, 0.07);
+}
+
+.tableManagement__card.active {
+  border-color: #C6A87A;
+}
+
+.tableManagement__cardTop {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.tableManagement__tableIcon {
+  width: 52px;
+
+  height: 52px;
+
+  background: #F7F3EC;
+
+  color: #8B3A2E;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: 700;
+
+  font-size: 17px;
+
+  border: 1px solid #E5D7C3;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.tableManagement__status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+}
+
+.tableManagement__status.available {
+  background: #DCFCE7;
+
+  color: #166534;
+}
+
+.tableManagement__status.active {
+  background: #FEF3C7;
+
+  color: #92400E;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.tableManagement__cardBody {
+  flex: 1;
+
+  padding-top: 22px;
+}
+
+.tableManagement__cardBody h2 {
+  margin: 0 0 8px;
+
+  color: #5A4632;
+
+  font-size: 22px;
+}
+
+.tableManagement__cardBody p {
+  color: #7A6A58;
+
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.tableManagement__sessionInfo {
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.tableManagement__sessionInfo div {
+  background: #FBF8F2;
+
+  padding: 11px;
+
+  border-radius: 12px;
+
+  border: 1px solid #EFE7DB;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.tableManagement__sessionInfo span {
+  color: #8D7B68;
+
+  font-size: 11px;
+}
+
+.tableManagement__sessionInfo strong {
+  color: #5A4632;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.tableManagement__button {
+  border: none;
+
+  background: #8B3A2E;
+
+  color: #FFFFFF;
+
+  padding: 11px 18px;
+
+  border-radius: 11px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+
+  min-height: 42px;
+}
+
+.tableManagement__button:hover {
+  opacity: 0.92;
+}
+
+.tableManagement__button:active {
+  transform: scale(0.98);
+}
+
+.tableManagement__button.secondary {
+  background: #7A6A58;
+}
+
+.tableManagement__button.light {
+  background: #EFE7DB;
+
+  color: #5A4632;
+}
+
+.tableManagement__button.danger {
+  background: #B91C1C;
+}
+
+
+
+/* =========================
+   MODAL
+========================= */
+
+.tableManagement__modalOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  background: rgba(34, 24, 18, 0.48);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.tableManagement__modal {
+  width: 100%;
+
+  max-width: 470px;
+
+  background: #FFFFFF;
+
+  border-radius: 22px;
+
+  padding: 26px;
+
+  border: 1px solid #E5D7C3;
+
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+}
+
+.tableManagement__modalDetail {
+  max-width: 520px;
+}
+
+.tableManagement__modalHeader {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.tableManagement__modalHeader h2 {
+  margin: 0;
+
+  color: #8B3A2E;
+
+  font-size: 24px;
+}
+
+.tableManagement__closeIcon {
+  width: 36px;
+
+  height: 36px;
+
+  border: none;
+
+  background: #F7F3EC;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  color: #5A4632;
+
+  font-size: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.tableManagement__modalDescription {
+  margin: 18px 0 0;
+
+  color: #7A6A58;
+
+  line-height: 1.65;
+
+  font-size: 14px;
+}
+
+.tableManagement__modalSmallTitle {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #A98A65;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+/* =========================
+   NOTICE / WARNING
+========================= */
+
+.tableManagement__notice {
+  margin-top: 20px;
+
+  background: #FBF8F2;
+
+  border: 1px solid #EFE7DB;
+
+  color: #7A6A58;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.tableManagement__warning {
+  margin-top: 20px;
+
+  background: #FEF2F2;
+
+  border: 1px solid #FECACA;
+
+  color: #991B1B;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   MODAL BUTTON
+========================= */
+
+.tableManagement__modalActions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+/* =========================
+   DETAIL STATUS
+========================= */
+
+.tableManagement__detailStatus {
+  margin-top: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #7A6A58;
+
+  font-size: 13px;
+}
+
+/* =========================
+   QR
+========================= */
+
+.tableManagement__qrContainer {
+  margin-top: 25px;
+
+  background: #FBF8F2;
+
+  border: 1px solid #EFE7DB;
+
+  border-radius: 18px;
+
+  padding: 25px;
+
+  text-align: center;
+}
+
+.tableManagement__qrPlaceholder {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 17px;
+}
+
+.tableManagement__qrFake {
+  width: 180px;
+
+  height: 180px;
+
+  background:
+    linear-gradient(
+      45deg,
+      #2F2924 25%,
+      transparent 25%
+    ),
+    linear-gradient(
+      -45deg,
+      #2F2924 25%,
+      transparent 25%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 75%,
+      #2F2924 75%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 75%,
+      #2F2924 75%
+    );
+
+  background-size: 24px 24px;
+
+  background-position:
+    0 0,
+    0 12px,
+    12px -12px,
+    -12px 0;
+
+  background-color: #FFFFFF;
+
+  border: 12px solid #FFFFFF;
+
+  box-shadow: 0 0 0 1px #E5D7C3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.tableManagement__qrFake span {
+  background: #FFFFFF;
+
+  color: #8B3A2E;
+
+  font-weight: 700;
+
+  font-size: 18px;
+
+  padding: 12px;
+}
+
+.tableManagement__qrContainer h3 {
+  color: #5A4632;
+
+  margin: 0 0 7px;
+
+  font-size: 18px;
+}
+
+.tableManagement__qrContainer p {
+  margin: 0;
+
+  color: #7A6A58;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* =========================
+   SESSION DETAIL
+========================= */
+
+.tableManagement__sessionDetail {
+  margin-top: 18px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: #FFFFFF;
+
+  border: 1px solid #EFE7DB;
+
+  border-radius: 12px;
+
+  padding: 13px 15px;
+}
+
+.tableManagement__sessionDetail span {
+  color: #7A6A58;
+
+  font-size: 13px;
+}
+
+.tableManagement__sessionDetail strong {
+  color: #5A4632;
+
+  font-size: 14px;
+}
+
+.tableManagement__detailActions {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media screen and (max-width: 1100px) {
+  .tableManagement__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tableManagement {
+    padding: 20px;
+  }
+
+  .tableManagement__header h1 {
+    font-size: 27px;
+  }
+
+  .tableManagement__summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tableManagement__summaryCard:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .tableManagement__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tableManagement__modal {
+    padding: 22px;
+  }
+
+  .tableManagement__detailActions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tableManagement {
+    padding: 16px;
+  }
+
+  .tableManagement__summary {
+    grid-template-columns: 1fr;
+  }
+
+  .tableManagement__summaryCard:first-child {
+    grid-column: auto;
+  }
+
+  .tableManagement__modalActions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tableManagement__modalActions button {
+    width: 100%;
+  }
+
+  .tableManagement__qrFake {
+    width: 150px;
+
+    height: 150px;
+  }
+}
+
+.tableManagement__addButton {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.tableManagement__cardFooter {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.tableManagement__cardFooter .tableManagement__button {
+  flex: 1;
+}
+
+.tableManagement__button.remove {
+  background: #FFFFFF;
+
+  color: #B91C1C;
+
+  border: 1px solid #FECACA;
+}
+
+.tableManagement__button.remove:hover {
+  background: #FEF2F2;
+
+  opacity: 1;
+}

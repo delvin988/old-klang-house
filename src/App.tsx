@@ -9,7 +9,7 @@ import BackofficeLogin from "./container/Backoffice/BackOfficeLogin";
 import ReservationManagement from "./container/Backoffice/reservation/reservationManagement";
 import MenuManagement from "./container/Backoffice/menuManagement/MenuManagement";
 import CustomerManagement from "./container/Backoffice/customerManagement/CustomerManagement";
-
+import TableManagement from "./container/Backoffice/tableManagement/TableManagement";
 import "./App.css";
 
 type HomeProps = {
@@ -90,6 +90,14 @@ const App: React.FC = () => {
           element={
             <ProtectedBackoffice>
               <CustomerManagement />
+            </ProtectedBackoffice>
+          }
+        />
+        <Route
+          path="/backoffice/tables"
+          element={
+            <ProtectedBackoffice>
+              <TableManagement />
             </ProtectedBackoffice>
           }
         />

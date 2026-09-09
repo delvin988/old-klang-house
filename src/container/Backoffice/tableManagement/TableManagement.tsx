@@ -53,7 +53,7 @@ type TableOrder = {
     items: TableOrderItem[];
 };
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://okhrestaurant-ca7148d529c4.herokuapp.com";
 
 const TableManagement = () => {
     const navigate = useNavigate();

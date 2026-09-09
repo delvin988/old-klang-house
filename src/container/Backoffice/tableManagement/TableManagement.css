@@ -317,20 +317,16 @@
 
 .tableManagement__modalOverlay {
   position: fixed;
-
   inset: 0;
-
   z-index: 9999;
-
   background: rgba(34, 24, 18, 0.48);
 
   display: flex;
-
-  align-items: center;
-
+  align-items: flex-start;
   justify-content: center;
 
   padding: 20px;
+  overflow-y: auto;
 }
 
 .tableManagement__modal {
@@ -349,9 +345,6 @@
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
 }
 
-.tableManagement__modalDetail {
-  max-width: 520px;
-}
 
 .tableManagement__modalHeader {
   display: flex;
@@ -738,4 +731,344 @@
   background: #FEF2F2;
 
   opacity: 1;
+}
+
+.tableManagement__loading {
+  width: 100%;
+
+  background: #FFFFFF;
+
+  border: 1px solid #E5D7C3;
+
+  border-radius: 18px;
+
+  padding: 60px 20px;
+
+  text-align: center;
+
+  color: #7A6A58;
+}
+
+.tableManagement__button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+.tableManagement__realQr {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 8px;
+
+  background: #FFFFFF;
+
+  border: 1px solid #E5D7C3;
+
+  border-radius: 12px;
+}
+
+.tableManagement__realQr canvas {
+  display: block;
+}
+
+.tableManagement__qrUnavailable {
+  width: 200px;
+
+  height: 200px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #FFFFFF;
+
+  border: 1px solid #E5D7C3;
+
+  border-radius: 12px;
+
+  color: #7A6A58;
+}
+.tableManagement__ordersSection {
+  margin-top: 22px;
+
+  border-top: 1px solid #EFE7DB;
+
+  padding-top: 20px;
+}
+
+.tableManagement__ordersHeader {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+.tableManagement__ordersHeader h3 {
+  margin: 0;
+
+  color: #5A4632;
+
+  font-size: 17px;
+}
+
+.tableManagement__ordersHeader span {
+  color: #8D7B68;
+
+  font-size: 12px;
+}
+
+.tableManagement__ordersList {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  max-height: 260px;
+
+  overflow-y: auto;
+
+  padding-right: 3px;
+}
+
+.tableManagement__orderCard {
+  background: #FBF8F2;
+
+  border: 1px solid #EFE7DB;
+
+  border-radius: 13px;
+
+  padding: 13px;
+}
+
+.tableManagement__orderCardHeader {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.tableManagement__orderCardHeader div span {
+  color: #A98A65;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.tableManagement__orderStatus {
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.tableManagement__orderStatus.new {
+  background: #FEF3C7;
+
+  color: #92400E;
+}
+
+.tableManagement__orderStatus.preparing {
+  background: #DBEAFE;
+
+  color: #1D4ED8;
+}
+
+.tableManagement__orderStatus.served {
+  background: #DCFCE7;
+
+  color: #166534;
+}
+
+.tableManagement__orderStatus.cancelled {
+  background: #FEE2E2;
+
+  color: #B91C1C;
+}
+
+.tableManagement__orderItems {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-top: 11px;
+}
+
+.tableManagement__orderItem {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  color: #5A4632;
+
+  font-size: 12px;
+}
+
+.tableManagement__orderItem strong {
+  font-weight: 600;
+}
+
+.tableManagement__orderItem small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #8D7B68;
+
+  font-size: 10px;
+}
+
+.tableManagement__orderItem > span {
+  color: #7A6A58;
+
+  white-space: nowrap;
+}
+
+.tableManagement__orderTotal {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 11px;
+
+  padding-top: 10px;
+
+  border-top: 1px solid #E5D7C3;
+}
+
+.tableManagement__orderTotal span {
+  color: #7A6A58;
+
+  font-size: 11px;
+}
+
+.tableManagement__orderTotal strong {
+  color: #8B3A2E;
+
+  font-size: 13px;
+}
+
+.tableManagement__ordersLoading,
+.tableManagement__ordersEmpty {
+  background: #FBF8F2;
+
+  border: 1px solid #EFE7DB;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  color: #8D7B68;
+
+  font-size: 12px;
+}
+.tableManagement__modalDetail {
+  max-width: 520px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.tableManagement__button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+.tableManagement__orderItem.cancelled {
+    opacity: 0.6;
+}
+
+.tableManagement__orderItemMain {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tableManagement__orderItemStatus.cancelled {
+    padding: 3px 7px;
+    border-radius: 999px;
+
+    background: #FEE2E2;
+    color: #B91C1C;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.tableManagement__orderItem > span.cancelled {
+    color: #8D7B68;
+    text-decoration: line-through;
+}
+.tableManagement__tableTimeWarning {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: #fff7e6;
+    border: 1px solid #f0c36d;
+}
+
+.tableManagement__tableTimeWarning strong {
+    display: block;
+}
+
+.tableManagement__tableTimeWarning p {
+    margin: 6px 0;
+}
+
+.tableManagement__tableTimeWarning span {
+    font-size: 13px;
+}
+
+.tableManagement__tableTimeWarning.critical {
+    background: #fff0f0;
+    border-color: #dc6b6b;
+}
+
+.tableManagement__statusWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.tableManagement__timeWarning {
+    color: #B45309;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.tableManagement__timeWarning.critical {
+    color: #B91C1C;
 }

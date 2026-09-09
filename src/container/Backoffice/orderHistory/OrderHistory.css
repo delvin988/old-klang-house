@@ -1,0 +1,555 @@
+.orderHistory {
+    width: 100%;
+}
+.orderHistory__filterCard {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 24px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5D7C3;
+
+    border-radius: 18px;
+}
+
+.orderHistory__filterRow {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.orderHistory__filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    flex: 1;
+}
+.orderHistory__filterGroup label {
+    color: #7A6A58;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.orderHistory__filterGroup input,
+.orderHistory__filterGroup select {
+    width: 100%;
+    min-height: 42px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #E5D7C3;
+    border-radius: 10px;
+
+    background: #FBF8F2;
+
+    color: #5A4632;
+    font-size: 13px;
+
+    outline: none;
+    box-sizing: border-box;
+}
+
+.orderHistory__filterGroup input:focus,
+.orderHistory__filterGroup select:focus {
+    border-color: #C6A87A;
+}
+
+
+.orderHistory__filterActions {
+    display: flex;
+    gap: 10px;
+}
+
+.orderHistory__searchButton,
+.orderHistory__clearButton {
+    min-height: 42px;
+
+    padding: 11px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.orderHistory__searchButton {
+    border: none;
+
+    background: #8B3A2E;
+
+    color: #FFFFFF;
+}
+
+.orderHistory__clearButton {
+    border: 1px solid #E5D7C3;
+
+    background: #FFFFFF;
+
+    color: #5A4632;
+}
+
+.orderHistory__searchButton:hover,
+.orderHistory__clearButton:hover {
+    opacity: 0.92;
+}
+
+.orderHistory__searchButton:disabled,
+.orderHistory__clearButton:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+.orderHistory__empty {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5D7C3;
+
+    border-radius: 18px;
+}
+
+.orderHistory__empty h3 {
+    margin: 0 0 8px;
+
+    color: #8B3A2E;
+
+    font-size: 18px;
+}
+
+.orderHistory__empty p {
+    margin: 0;
+
+    color: #7A6A58;
+
+    font-size: 13px;
+}
+
+.orderHistory__resultHeader {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 15px;
+
+    margin-bottom: 16px;
+}
+
+.orderHistory__resultHeader h2 {
+    margin: 0 0 5px;
+
+    color: #5A4632;
+
+    font-size: 20px;
+}
+
+.orderHistory__resultHeader span {
+    color: #8D7B68;
+
+    font-size: 12px;
+}
+
+.orderHistory__resultHeader > strong {
+    color: #8B3A2E;
+
+    font-size: 13px;
+}
+
+.orderHistory__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    width: 100%;
+}
+
+.orderHistory__card {
+    width: 100%;
+    padding: 20px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5D7C3;
+
+    border-radius: 18px;
+
+    box-sizing: border-box;
+}
+
+.orderHistory__cardHeader {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.orderHistory__smallLabel {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #A98A65;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.orderHistory__cardHeader h2 {
+    margin: 0;
+
+    color: #5A4632;
+
+    font-size: 20px;
+}
+
+.orderHistory__status {
+    padding: 7px 11px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.orderHistory__status.new {
+    background: #FEF3C7;
+
+    color: #92400E;
+}
+
+.orderHistory__status.preparing {
+    background: #DBEAFE;
+
+    color: #1D4ED8;
+}
+
+.orderHistory__status.served {
+    background: #DCFCE7;
+
+    color: #166534;
+}
+
+.orderHistory__status.cancelled {
+    background: #FEE2E2;
+
+    color: #B91C1C;
+}
+
+.orderHistory__info {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 14px;
+}
+
+.orderHistory__info span {
+    padding: 7px 10px;
+
+    border-radius: 9px;
+
+    background: #FBF8F2;
+
+    border: 1px solid #EFE7DB;
+
+    color: #7A6A58;
+
+    font-size: 11px;
+}
+
+.orderHistory__items {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.orderHistory__item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #EFE7DB;
+
+    color: #5A4632;
+
+    font-size: 12px;
+}
+
+.orderHistory__item:last-child {
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+.orderHistory__itemMain {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+.orderHistory__itemMain > span {
+    min-width: 30px;
+
+    color: #A98A65;
+
+    font-weight: 700;
+}
+
+.orderHistory__itemMain strong {
+    font-weight: 600;
+}
+
+.orderHistory__item > strong {
+    color: #8B3A2E;
+
+    white-space: nowrap;
+}
+
+.orderHistory__item p {
+    margin: 5px 0 0 40px;
+
+    color: #8D7B68;
+
+    font-size: 10px;
+}
+
+.orderHistory__footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 16px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #E5D7C3;
+}
+
+.orderHistory__footer span {
+    color: #7A6A58;
+
+    font-size: 12px;
+}
+
+.orderHistory__footer strong {
+    color: #8B3A2E;
+
+    font-size: 17px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .orderHistory__filterRow {
+        grid-template-columns: 1fr;
+    }
+
+    .orderHistory__filterActions {
+        justify-content: stretch;
+    }
+
+    .orderHistory__searchButton,
+    .orderHistory__clearButton {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .orderHistory__resultHeader {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .orderHistory__card {
+        padding: 16px;
+    }
+
+    .orderHistory__filterActions {
+        flex-direction: column;
+    }
+
+    .orderHistory__searchButton,
+    .orderHistory__clearButton {
+        width: 100%;
+    }
+}
+.orderHistory__pagination {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 24px;
+    margin-bottom: 20px;
+
+    padding: 14px 4px;
+}
+
+.orderHistory__paginationInfo {
+    color: #7A6A58;
+
+    font-size: 12px;
+}
+
+.orderHistory__paginationInfo strong {
+    color: #5A4632;
+}
+
+.orderHistory__paginationControls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.orderHistory__pageButton {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #E5D7C3;
+
+    border-radius: 9px;
+
+    background: #FFFFFF;
+
+    color: #5A4632;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.orderHistory__pageButton:hover:not(:disabled) {
+    background: #F7F3EC;
+}
+
+.orderHistory__pageButton.active {
+    border-color: #8B3A2E;
+
+    background: #8B3A2E;
+
+    color: #FFFFFF;
+}
+
+.orderHistory__pageButton:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 600px) {
+
+    .orderHistory__pagination {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+    }
+}
+.orderHistory__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #EFE7DB;
+}
+
+.orderHistory__actionButton {
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.orderHistory__actionButton:hover {
+    opacity: 0.9;
+}
+
+.orderHistory__actionButton.preparing {
+    background: #DBEAFE;
+    color: #1D4ED8;
+}
+
+.orderHistory__actionButton.served {
+    background: #DCFCE7;
+    color: #166534;
+}
+
+.orderHistory__actionButton.cancel {
+    background: #FEE2E2;
+    color: #B91C1C;
+}
+
+.orderHistory__itemCancelButton {
+    border: 1px solid #FECACA;
+    background: #FFFFFF;
+    color: #B91C1C;
+    border-radius: 7px;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.orderHistory__itemCancelButton:hover {
+    background: #FEF2F2;
+}

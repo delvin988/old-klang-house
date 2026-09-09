@@ -24,6 +24,9 @@ type Menu = {
 
   active: boolean;
   todaySpecial: boolean;
+  qrOrderEnabled: boolean;
+
+  qrOrderAvailable: boolean;
 };
 type Category = {
   id: number;
@@ -221,6 +224,69 @@ const MenuManagement = () => {
 
     loadMenus();
   };
+  const toggleQrOrderEnabled = async (menu: Menu) => {
+    const token = localStorage.getItem("token");
+
+    try {
+      const res = await fetch(
+        `https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menus/${menu.id}/qr-order-enabled`,
+        {
+          method: "PUT",
+
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+
+          body: JSON.stringify({
+            enabled: !menu.qrOrderEnabled,
+          }),
+        },
+      );
+
+      if (!res.ok) {
+        throw new Error("Failed to update QR order status");
+      }
+
+      await loadMenus();
+    } catch (error) {
+      console.error(error);
+
+      alert("Failed to update QR order status.");
+    }
+  };
+
+  const toggleQrOrderAvailable = async (menu: Menu) => {
+    const token = localStorage.getItem("token");
+
+    try {
+      const res = await fetch(
+        `https://okhrestaurant-ca7148d529c4.herokuapp.com/api/menus/${menu.id}/qr-order-available`,
+        {
+          method: "PUT",
+
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+
+          body: JSON.stringify({
+            available: !menu.qrOrderAvailable,
+          }),
+        },
+      );
+
+      if (!res.ok) {
+        throw new Error("Failed to update QR order availability");
+      }
+
+      await loadMenus();
+    } catch (error) {
+      console.error(error);
+
+      alert("Failed to update QR order availability.");
+    }
+  };
 
   const deleteMenu = async (id: number) => {
     if (!window.confirm("Delete this menu?")) {
@@ -378,7 +444,8 @@ const MenuManagement = () => {
                 </th>
 
                 <th>Today's Special</th>
-
+                <th>QR Menu</th>
+                <th>QR Availability</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -386,7 +453,7 @@ const MenuManagement = () => {
             <tbody>
               {menus.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="backoffice__empty">
+                  <td colSpan={8} className="backoffice__empty">
                     <div className="backoffice__emptyContent">
                       <h3>No Menu Found</h3>
 
@@ -405,14 +472,70 @@ const MenuManagement = () => {
 
                     <td>
                       <span
-                        className={`menuManagement__status ${
-                          menu.active ? "active" : "inactive"
-                        }`}
+                        className={`menuManagement__status ${menu.active ? "active" : "inactive"
+                          }`}
                       >
                         {menu.active ? "Active" : "Inactive"}
                       </span>
                     </td>
                     <td>{menu.todaySpecial ? "Yes" : "No"}</td>
+                    <td>
+                      <div className="menuManagement__qrToggleWrapper">
+                        <button
+                          type="button"
+                          className={`menuManagement__toggle ${menu.qrOrderEnabled ? "on" : "off"
+                            }`}
+                          onClick={() => toggleQrOrderEnabled(menu)}
+                        >
+                          <span className="menuManagement__toggleCircle" />
+                        </button>
+
+                        <span
+                          className={
+                            menu.qrOrderEnabled
+                              ? "menuManagement__qrText enabled"
+                              : "menuManagement__qrText disabled"
+                          }
+                        >
+                          {menu.qrOrderEnabled ? "Shown" : "Hidden"}
+                        </span>
+                      </div>
+                    </td>
+
+                    <td>
+                      <div className="menuManagement__qrToggleWrapper">
+                        <button
+                          type="button"
+                          className={`menuManagement__toggle ${menu.qrOrderAvailable ? "on" : "off"
+                            }`}
+                          onClick={() => toggleQrOrderAvailable(menu)}
+                          disabled={!menu.qrOrderEnabled}
+                          title={
+                            !menu.qrOrderEnabled
+                              ? "Enable QR Menu first"
+                              : undefined
+                          }
+                        >
+                          <span className="menuManagement__toggleCircle" />
+                        </button>
+
+                        <span
+                          className={
+                            !menu.qrOrderEnabled
+                              ? "menuManagement__qrText disabled"
+                              : menu.qrOrderAvailable
+                                ? "menuManagement__qrText enabled"
+                                : "menuManagement__qrText soldout"
+                          }
+                        >
+                          {!menu.qrOrderEnabled
+                            ? "-"
+                            : menu.qrOrderAvailable
+                              ? "Available"
+                              : "Sold Out"}
+                        </span>
+                      </div>
+                    </td>
                     <td>
                       <div className="backoffice__actions">
                         <button onClick={() => openEditModal(menu)}>

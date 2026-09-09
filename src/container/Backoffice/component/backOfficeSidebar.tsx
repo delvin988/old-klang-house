@@ -5,6 +5,8 @@ import {
   FiUsers,
   FiGrid,
   FiLogOut,
+  FiClipboard,
+  FiClock,
 } from "react-icons/fi";
 
 import { Link } from "react-router-dom";
@@ -80,6 +82,29 @@ const BackofficeSidebar = ({ onLogout, isOpen, onClose }: Props) => {
           >
             <FiGrid />
             Table Management
+          </NavLink>
+
+          <NavLink
+            to="/backoffice/orders"
+            className={({ isActive }) =>
+              isActive
+                ? "sidebar__item active"
+                : "sidebar__item"
+            }
+          >
+            <FiClipboard />
+            Orders
+          </NavLink>
+          <NavLink
+            to="/backoffice/order-history"
+            className={({ isActive }) =>
+              isActive
+                ? "sidebar__item active"
+                : "sidebar__item"
+            }
+          >
+            <FiClock />
+            Order History
           </NavLink>
         </nav>
 

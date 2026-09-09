@@ -10,6 +10,10 @@ import ReservationManagement from "./container/Backoffice/reservation/reservatio
 import MenuManagement from "./container/Backoffice/menuManagement/MenuManagement";
 import CustomerManagement from "./container/Backoffice/customerManagement/CustomerManagement";
 import TableManagement from "./container/Backoffice/tableManagement/TableManagement";
+import QrOrderEntry from "./container/Order/QrOrderEntry";
+import CustomerMenu from "./container/Order/CustomerMenu";
+import OrderManagement from "./container/Backoffice/orderManagement/OrderManagement";
+import OrderHistory from "./container/Backoffice/orderHistory/OrderHistory";
 import "./App.css";
 
 type HomeProps = {
@@ -28,12 +32,12 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => (
 
     <AboutUs language={language} />
 
-    <SpecialMenu language={language}/>
+    <SpecialMenu language={language} />
 
     <FindUs language={language} />
 
-    <Footer language={language}/>
-    <PromoPopup language={language}/>
+    <Footer language={language} />
+    <PromoPopup language={language} />
   </div>
 );
 
@@ -100,6 +104,30 @@ const App: React.FC = () => {
               <TableManagement />
             </ProtectedBackoffice>
           }
+        />
+        <Route
+          path="/backoffice/orders"
+          element={
+            <ProtectedBackoffice>
+              <OrderManagement />
+            </ProtectedBackoffice>
+          }
+        />
+        <Route
+          path="/backoffice/order-history"
+          element={
+            <ProtectedBackoffice>
+              <OrderHistory />
+            </ProtectedBackoffice>
+          }
+        />
+        <Route
+          path="/order/q/:qrToken"
+          element={<QrOrderEntry />}
+        />
+        <Route
+          path="/order/q/:qrToken/menu"
+          element={<CustomerMenu />}
         />
       </Routes>
     </BrowserRouter>

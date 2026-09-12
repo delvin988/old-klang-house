@@ -579,8 +579,8 @@ const CustomerMenu = () => {
                     <div
                       key={menu.id}
                       className={`customerMenu__item ${soldOut
-                          ? "soldOut"
-                          : ""
+                        ? "soldOut"
+                        : ""
                         }`}
                       onClick={() =>
                         openMenuDetail(menu)
@@ -657,8 +657,8 @@ const CustomerMenu = () => {
               <div
                 key={menu.id}
                 className={`customerMenu__item ${soldOut
-                    ? "soldOut"
-                    : ""
+                  ? "soldOut"
+                  : ""
                   }`}
                 onClick={() =>
                   openMenuDetail(menu)
@@ -722,6 +722,21 @@ const CustomerMenu = () => {
 
       </main>
 
+      {cart.length > 0 && (
+        <div className="customerMenu__floatingCart">
+          <div className="customerMenu__floatingCartInfo">
+            <span>{cart.length} items</span>
+            <strong>Rp {formatPrice(calculateTotal())}</strong>
+          </div>
+
+          <button
+            className="customerMenu__floatingCartButton"
+            onClick={() => setShowCart(true)}
+          >
+            Place Order
+          </button>
+        </div>
+      )}
       {/* MENU DETAIL MODAL */}
 
       {selectedMenu && (

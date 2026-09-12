@@ -560,6 +560,20 @@
 
     padding: 22px;
   }
+   .customerMenu__floatingCart {
+    bottom: 12px;
+    width: calc(100% - 24px);
+    padding: 11px 12px 11px 15px;
+  }
+
+  .customerMenu__floatingCartButton {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .customerMenu__floatingCartInfo strong {
+    font-size: 15px;
+  }
 }
 
 .customerMenu__placeOrderButton:disabled {
@@ -986,4 +1000,65 @@
   flex-direction: column;
 
   gap: 12px;
+}
+
+.customerMenu__floatingCart {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+
+  width: min(850px, calc(100% - 32px));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 12px 14px 12px 18px;
+
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #E5D7C3;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(60, 40, 20, 0.16);
+
+  z-index: 50;
+
+  backdrop-filter: blur(10px);
+}
+
+.customerMenu__floatingCartInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.customerMenu__floatingCartInfo span {
+  color: #7A6A58;
+  font-size: 11px;
+}
+
+.customerMenu__floatingCartInfo strong {
+  color: #8B3A2E;
+  font-size: 16px;
+}
+
+.customerMenu__floatingCartButton {
+  border: none;
+  background: #8B3A2E;
+  color: #FFFFFF;
+
+  padding: 12px 20px;
+  border-radius: 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.customerMenu__floatingCartButton:hover {
+  opacity: 0.92;
 }

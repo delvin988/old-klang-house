@@ -23,6 +23,7 @@ import food_header20 from '../assets/food_new20.webp'
 import food_header22 from '../assets/food_new22.webp'
 import menuQr from '../assets/menu-qr.png'
 import menuOkh from '../assets/OKH_MENU.webp'
+import menuOkh2 from '../assets/OKH_MENU2.webp'
 
 export default {
   G,
@@ -50,4 +51,5 @@ export default {
   food_header22,
   menuQr,
   menuOkh,
+  menuOkh2
 };

@@ -72,7 +72,7 @@ const FindUs: React.FC<Props> = ({ language }) => {
 
   const t = translations[language];
   const [showMenu, setShowMenu] = React.useState(false);
-
+  const [menuPage, setMenuPage] = React.useState(1);
 
   const handleDirections = () => {
     window.open(
@@ -266,6 +266,7 @@ const FindUs: React.FC<Props> = ({ language }) => {
         </motion.div>
 
       </div>
+
       <AnimatePresence>
         {showMenu && (
           <motion.div
@@ -307,15 +308,42 @@ const FindUs: React.FC<Props> = ({ language }) => {
                 ×
               </button>
 
-              <img
-                src={images.menuOkh}
-                alt="Old Klang House Menu"
-                className="menu__popup-image"
-              />
+              <div className="menu__popup-content">
+                <img
+                  src={menuPage === 1 ? images.menuOkh : images.menuOkh2}
+                  alt={`Old Klang House Menu - Page ${menuPage}`}
+                  className="menu__popup-image"
+                />
+
+                <div className="menu__popup-pagination">
+                  <button
+                    type="button"
+                    className="menu__popup-nav"
+                    onClick={() => setMenuPage(1)}
+                    disabled={menuPage === 1}
+                  >
+                    Previous
+                  </button>
+
+                  <span className="menu__popup-page-number">
+                    {menuPage} / 2
+                  </span>
+
+                  <button
+                    type="button"
+                    className="menu__popup-nav"
+                    onClick={() => setMenuPage(2)}
+                    disabled={menuPage === 2}
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
     </div>
 
   );

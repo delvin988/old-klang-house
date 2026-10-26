@@ -14,6 +14,7 @@ import QrOrderEntry from "./container/Order/QrOrderEntry";
 import CustomerMenu from "./container/Order/CustomerMenu";
 import OrderManagement from "./container/Backoffice/orderManagement/OrderManagement";
 import OrderHistory from "./container/Backoffice/orderHistory/OrderHistory";
+import Heritage from "./container/Heritage/Heritage";
 import "./App.css";
 
 type HomeProps = {
@@ -30,13 +31,14 @@ const Home: React.FC<HomeProps> = ({ language, setLanguage }) => (
   >
     <Header language={language} setLanguage={setLanguage} />
 
-    <AboutUs language={language} />
+    <Heritage language={language} />
 
     <SpecialMenu language={language} />
 
     <FindUs language={language} />
 
     <Footer language={language} />
+
     <PromoPopup language={language} />
   </div>
 );

@@ -24,6 +24,8 @@ import food_header22 from '../assets/food_new22.webp'
 import menuQr from '../assets/menu-qr.png'
 import menuOkh from '../assets/OKH_MENU.webp'
 import menuOkh2 from '../assets/OKH_MENU2.webp'
+import profileOkh from '../assets/okh-profile.webp'
+import companyProfile from '../assets/company_profile.pdf'
 
 export default {
   G,
@@ -51,5 +53,7 @@ export default {
   food_header22,
   menuQr,
   menuOkh,
-  menuOkh2
+  menuOkh2,
+  profileOkh,
+  companyProfile
 };
